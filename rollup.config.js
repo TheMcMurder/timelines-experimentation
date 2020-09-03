@@ -17,7 +17,7 @@ export default {
   input: resolve(process.cwd(), `src/timelines.js`),
   output: {
     dir: resolve(process.cwd(), outputPath),
-    format: "iife",
+    format: "system",
     name: null,
     sourcemap: true,
   },

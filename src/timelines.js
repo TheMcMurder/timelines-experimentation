@@ -1,9 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
-function Body() {
-  return <div>React</div>
-}
+import Root from './timelines-root'
 
 const domContainer = document.querySelector('#timelines-app');
-ReactDOM.render(<Body/>, domContainer);
+ReactDOM.render(<Root />, domContainer);
