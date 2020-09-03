@@ -1,0 +1,33 @@
+{
+  "name": "timelines",
+  "version": "0.0.1",
+  "description": "Informative experimentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheMcMurder/timelines-experimentation.git"
+  },
+  "author": "TheMcMurder",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/TheMcMurder/timelines-experimentation/issues"
+  },
+  "homepage": "https://github.com/TheMcMurder/timelines-experimentation#readme",
+  "dependencies": {
+    "d3": "^6.1.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "postcss": "^7.0.32",
+    "postcss-load-config": "^2.1.0",
+    "rollup": "^2.26.9",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-postcss": "^3.1.8",
+    "rollup-plugin-terser": "^7.0.1",
+    "tailwindcss": "^1.7.6"
+  }
+}
