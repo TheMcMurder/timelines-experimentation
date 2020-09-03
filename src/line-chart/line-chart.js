@@ -49,10 +49,10 @@ function BottomAxis ({scale, translateY}) {
   return (
     <g id='bottom-axis-wrapper'>
       <foreignObject width="100%" y={translateY} height={20}>
-        <div className="flex content-between">
+        <div className="flex justify-between">
           {
             ticks.map(tick => (
-              <span key={tick}>
+              <span key={tick} className='text-xs'>
                 {tick.toLocaleDateString('en-US')}
               </span>
             ))
