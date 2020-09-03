@@ -7,6 +7,10 @@ module.exports = {
     './src/**/*.js'
   ],
   theme: {
+    fontFamily: {
+      header: ['Open Sans', 'sans-serif'],
+      body: ['Roboto', 'sans-serif'],
+    },
     extend: {},
   },
   variants: {},
