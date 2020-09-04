@@ -1,11 +1,7 @@
 import React, {useMemo, useCallback, useRef, useLayoutEffect} from 'react'
 import {
-  select,
-  axisBottom,
-  axisLeft,
   scaleLinear,
   scaleUtc,
-  scaleTime,
   max,
   extent
 } from 'd3';
@@ -38,9 +34,6 @@ const margin = {
 }
 
 export default function LineChart () {
-  const svgRef = useRef()
-  const leftAxisRef = useRef()
-  const bottomAxisRef = useRef()
   const xScale = useMemo(
     () => scaleUtc()
       .domain(extent(data, d => d.date))
@@ -52,54 +45,37 @@ export default function LineChart () {
       .range([height - margin.bottom, margin.top])
     , [data])
 
-  const points = data.map((d) => {
-    console.log('d', d)
-    return [
-      xScale(d.date),
-      yScale(d.value),
-      d.value
-    ]
-  })
-
-  const yAxis = g => g
-  .attr("transform", `translate(${margin.left},0)`)
-  .call(axisLeft(yScale))
-  .call(g => select(".domain").remove())
-  .call(g => select(".tick:last-of-type text").clone()
-      .attr("x", 3)
-      .attr("text-anchor", "start")
-      .attr("font-weight", "bold")
-      .text(data.y))
-
-  const xAxis = g => g
-    .attr("transform", `translate(0,${height - margin.bottom})`)
-    .call(axisBottom(xScale).ticks(width / 80).tickSizeOuter(0))
-  useLayoutEffect(
-    () => {
-      select(bottomAxisRef.current).call(xAxis)
-      select(leftAxisRef.current).call(yAxis)
-    },
+  const points = useMemo(
+    () => (
+      data.map((d) => {
+        return [
+          xScale(d.date),
+          yScale(d.value),
+          d.value
+        ]
+      })
+    ),
+    [data]
   )
+
   return (
     <div>
-      <svg viewBox={[0, 0, width , height]} ref={svgRef}>
+      <svg viewBox={[0, 0, width , height]}>
         <SvgLine
           translateX={margin.left}
           translateY={margin.bottom}
           points={points}
         />
-        <g ref={bottomAxisRef} color='red'/>
-        <g ref={leftAxisRef} color='red'/>
-        {/* <LeftValueAxis
+        <LeftValueAxis
           scale={yScale}
           translateX={margin.left}
-        /> */}
-        {/* <BottomTimeAxis
+        />
+        <BottomTimeAxis
           scale={xScale}
           translateY={height - margin.bottom}
           marginLeft={margin.left}
           width={width - margin.right}
-        /> */}
+        />
       </svg>
     </div>
   )

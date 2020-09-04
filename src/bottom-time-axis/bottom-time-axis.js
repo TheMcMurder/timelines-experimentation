@@ -7,14 +7,14 @@ export default function BottomTimeAxis({ scale, translateY, marginLeft, width })
       id='bottom-axis-wrapper'
       transform={`translate(0, ${translateY})`}
       fill="none"
-      font-size="10"
-      font-family="sans-serif"
-      text-anchor="middle"
+      fontSize="10"
+      fontFamily="sans-serif"
+      textAnchor="middle"
     >
       <path
         className="domain"
         stroke="currentColor"
-        d={`M${marginLeft + 0.5},0H${width}`}
+        d={`M${marginLeft + 0.5},0.5H${width}`}
       />
       {
         ticks.map((date) => {
@@ -24,12 +24,10 @@ export default function BottomTimeAxis({ scale, translateY, marginLeft, width })
               className='tick'
               opacity="1"
               transform={`translate(${scale(date) + 0.5}, 0)`}
-              textAnchor="middle"
-              fontSize='10'
             >
               <line
                 stroke="currentColor"
-                y2="-500"
+                y2="6"
               />
               <text
                 fill="currentColor"

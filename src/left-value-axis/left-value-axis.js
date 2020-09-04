@@ -8,7 +8,7 @@ export default function LeftValueAxis ({scale, translateX}) {
         ticks.map((tick) => {
           return (
             <g key={tick} transform={`translate(0, ${scale(tick) + 0.5})`}>
-              <line stroke="currentColor" x2="10000" />
+              <line stroke="currentColor" x2="-6" />
               <text fill="currentColor" x="-9" dy="0.32em">{tick}</text>
             </g>
           )
