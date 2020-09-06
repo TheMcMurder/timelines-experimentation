@@ -11,7 +11,7 @@ function randomBetween(min = 0, max = 100) {
 
 let prevRandom = 0
 function growingRandom() {
-  const newRandom = randomBetween(prevRandom + 10, prevRandom + 110)
+  const newRandom = randomBetween(prevRandom + 100, prevRandom + 110)
   prevRandom = newRandom
   return newRandom
 }

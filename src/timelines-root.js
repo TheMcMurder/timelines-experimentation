@@ -14,7 +14,7 @@ const margin = {
 }
 
 export default function TimelinesRootComponent() {
-  // const data = useData$()
+  const data = useData$()
   return (
     <div>
       <div>Root Component</div>
@@ -23,8 +23,8 @@ export default function TimelinesRootComponent() {
           height={height}
           width={width}
           margin={margin}
-          // data={data}
-          data={randomData}
+          data={data}
+          // data={randomData}
         />
       </Suspense>
     </div>
