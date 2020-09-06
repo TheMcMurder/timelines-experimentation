@@ -1,9 +1,3 @@
-function pureRandomTimeSeriesDataGenerator() {
-  return {
-    value: randomBetween(),
-    date: new Date(`${randomBetween(2000, 2020)}-${randomBetween(1, 12)}-${randomBetween(1, 28)}`),
-  }
-}
 function randomTimeSeriesDataGenerator() {
   return {
     value: growingRandom(),
@@ -24,14 +18,14 @@ function growingRandom() {
 
 let prevDay = new Date(`2020-01-01`)
 function futureDay() {
-  const daysToAdd = randomBetween(1, 10)
+  const daysToAdd = 1
   const newDay = new Date(prevDay.getTime())
   newDay.setDate(newDay.getDate() + daysToAdd)
   prevDay = newDay
   return newDay
 }
 
-export const randomData = Array.apply(null, { length: randomBetween(100, 500) }).map(
+export const randomData = Array.apply(null, { length: randomBetween(100, 360) }).map(
   Function.call,
   randomTimeSeriesDataGenerator,
 )
