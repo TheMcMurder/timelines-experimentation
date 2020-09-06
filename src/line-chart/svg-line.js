@@ -1,8 +1,7 @@
 import React from 'react'
 
-export default function SvgLine ({translateX, translateY, points}) {
+export default function SvgLine ({points}) {
   const line = points.reduce((acc, point, index) => {
-    console.log('point', point[2], point)
     const [x, y] = point
     if (index === 0){
       return `M${x},${y}`

@@ -1,49 +1,25 @@
-import React, {useMemo, useCallback, useRef, useLayoutEffect} from 'react'
+import React, {useMemo} from 'react'
 import {
   scaleLinear,
   scaleUtc,
   max,
   extent
 } from 'd3';
-import BottomTimeAxis from '../bottom-time-axis/bottom-time-axis.js'
-import LeftValueAxis from '../left-value-axis/left-value-axis.js'
+import BottomTimeAxis from './bottom-time-axis/bottom-time-axis.js'
+import LeftValueAxis from './left-value-axis/left-value-axis.js'
 import SvgLine from './svg-line.js'
 
-const dataIn = [
-  {date: '2007-04-24', value: 1},
-  {date: '2007-04-25', value: 2},
-  {date: '2007-04-26', value: 3},
-  {date: '2007-04-27', value: 4},
-  {date: '2007-04-28', value: 5},
-  {date: '2007-04-29', value: 6}
-]
-
-const data = dataIn.map(d => ({
-  ...d,
-  date: new Date(d.date)
-}))
-
-const height = 500
-const width = 900
-
-const margin = {
-  top: 20,
-  right: 20,
-  bottom: 40,
-  left: 60,
-}
-
-export default function LineChart () {
+export default function LineChart ({data, margin, height, width}) {
   const xScale = useMemo(
     () => scaleUtc()
       .domain(extent(data, d => d.date))
       .range([margin.left, width - margin.right])
-    , [data])
+    , [data, margin.left, margin.right, width])
   const yScale = useMemo(
     () => scaleLinear()
       .domain([0, max(data, d => d.value)]).nice()
       .range([height - margin.bottom, margin.top])
-    , [data])
+    , [data, margin.bottom, height, margin.top])
 
   const points = useMemo(
     () => (
@@ -62,8 +38,6 @@ export default function LineChart () {
     <div>
       <svg viewBox={[0, 0, width , height]}>
         <SvgLine
-          translateX={margin.left}
-          translateY={margin.bottom}
           points={points}
         />
         <LeftValueAxis
