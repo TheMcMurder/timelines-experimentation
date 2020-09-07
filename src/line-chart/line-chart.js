@@ -4,7 +4,7 @@ import BottomTimeAxis from './bottom-time-axis/bottom-time-axis.js'
 import LeftValueAxis from './left-value-axis/left-value-axis.js'
 import SvgLine from './svg-line.js'
 
-export default function LineChart({ data, margin, height, width }) {
+export default function LineChart({ data, margin, height, width, xDomainFn, yDomainFn }) {
   // const [v, setV] = useState(0)
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -18,20 +18,20 @@ export default function LineChart({ data, margin, height, width }) {
   const xScale = useMemo(
     () =>
       scaleUtc()
-        .domain(extent(data, (d) => d.date))
+        .domain(extent(data, xDomainFn))
         .range([margin.left, width - margin.right]),
     [data, margin.left, margin.right, width],
   )
   const yScale = useMemo(
     () =>
       scaleLinear()
-        .domain([0, max(data, (d) => d.value)])
+        .domain([0, max(data, yDomainFn)])
         .nice()
         .range([height - margin.bottom, margin.top]),
     [data, margin.bottom, height, margin.top],
   )
 
-  const points = useLineChartPoints(xScale, yScale, data)
+  const points = useLineChartPoints(xScale, yScale, data, xDomainFn, yDomainFn)
 
   return (
     <div>
@@ -49,11 +49,10 @@ export default function LineChart({ data, margin, height, width }) {
   )
 }
 
-function useLineChartPoints(xScale, yScale, data) {
+function useLineChartPoints(xScale, yScale, data, xDomainFn, yDomainFn) {
   return useMemo(() => {
-    console.log('compute Line chart points')
     return data.map((d) => {
-      return [xScale(d.date), yScale(d.value), d.value]
+      return [xScale(xDomainFn(d)), yScale(yDomainFn(d))]
     })
   }, [data, xScale, yScale])
 }
