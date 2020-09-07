@@ -4,22 +4,16 @@ import { scan, take, map, mergeMap } from 'rxjs/operators'
 
 const APIURL = 'https://api.covidtracking.com/v1/us/daily.json'
 
-// export const liveData$ = fromFetch(APIURL).pipe(
-//   map(data => {
-//     return data.map(d => ({
-//       ...d,
-//       date: new Date(d.dateChecked)
-//     }))
-//   })
-// )
-
-export const liveData$ = from(fetch(APIURL).then((d) => d.json())).pipe(
+const data$ = from(fetch(APIURL).then((r) => r.json())).pipe(
   map((data) => {
     return data.reverse().map((d) => ({
       ...d,
       date: new Date(d.dateChecked),
     }))
   }),
+)
+
+export const liveData$ = data$.pipe(
   mergeMap((data) => {
     return interval(100).pipe(
       take(data.length),
