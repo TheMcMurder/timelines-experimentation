@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { from, interval } from 'rxjs'
 import { scan, take, map, mergeMap } from 'rxjs/operators'
-import { getClosestLargerWarData } from './war-data.js'
+import { getAllWarsSmallerAndNextLarger } from './war-data.js'
 
 const APIURL = 'https://api.covidtracking.com/v1/us/daily.json'
 
@@ -24,10 +24,10 @@ export const liveData$ = data$.pipe(
     )
   }),
   map((data) => {
-    const closestWar = getClosestLargerWarData(data[data.length - 1].death)
+    const releventWars = getAllWarsSmallerAndNextLarger(data[data.length - 1].death)
     return {
       data,
-      closestWar,
+      releventWars,
     }
   }),
 )

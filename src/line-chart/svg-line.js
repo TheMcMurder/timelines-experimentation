@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function SvgLine({ points }) {
+export default function SvgLine({ points, stroke = 'steelblue' }) {
   const line = points.reduce((acc, point, index) => {
     const [x, y] = point
     if (index === 0) {
@@ -9,5 +9,5 @@ export default function SvgLine({ points }) {
       return acc + `L${x},${y}`
     }
   }, '')
-  return <path fill="none" stroke="steelblue" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" d={line} />
+  return <path fill="none" stroke={stroke} strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" d={line} />
 }

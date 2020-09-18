@@ -1,18 +1,33 @@
-import React, { lazy, Suspense } from 'react'
-const LineChart = lazy(() => import('./line-chart/line-chart.js'))
+import React, { useMemo } from 'react'
 import { useLiveData$ } from './data-stream/data-stream.js'
+import { useGetLinearScaleFn, useGetUtcScaleFn } from './line-chart/scales.js'
+import BottomTimeAxis from './line-chart/bottom-time-axis/bottom-time-axis.js'
+import LeftValueAxis from './line-chart/left-value-axis/left-value-axis.js'
+import SvgLine from './line-chart/svg-line.js'
+import WarLines from './line-chart/war-lines.js'
 
-export default function CovidChart(props) {
-  const { data, closestWar } = useLiveData$()
-  console.log('closestWar', closestWar)
-  const yAxisMax = closestWar?.dead * 1.1 || undefined
-  console.log('yAxisMax', yAxisMax)
+export default function CovidChart({ margin, width, height }) {
+  const { data, releventWars = [] } = useLiveData$()
+  const yAxisMax = getYAsixMax(releventWars)
   const [latest] = data.slice(-1)
+  const xScale = useGetUtcScaleFn({ margin, domainFn: xDomainFn, data, width, height })
+  const yScale = useGetLinearScaleFn({ margin, domainFn: deathsFn, data, scaleMax: yAxisMax, width, height })
+  const deathPoints = useLineChartPoints(xScale, yScale, data, xDomainFn, deathsFn)
   return (
-    <Suspense fallback={null}>
+    <div>
       <div>Day: {latest && latest.date.toLocaleString()}</div>
-      <LineChart {...props} data={data} xDomainFn={xDomainFn} yDomainFn={deathsFn} yAxisMax={yAxisMax} />
-    </Suspense>
+      <svg viewBox={[0, 0, width, height]}>
+        <SvgLine points={deathPoints} />
+        {true && <WarLines releventWars={releventWars} xScale={xScale} yScale={yScale} />}
+        <LeftValueAxis scale={yScale} translateX={margin.left} />
+        <BottomTimeAxis
+          scale={xScale}
+          translateY={height - margin.bottom}
+          marginLeft={margin.left}
+          width={width - margin.right}
+        />
+      </svg>
+    </div>
   )
 }
 
@@ -26,4 +41,21 @@ function deathsFn(d) {
 
 function infectionsFn(d) {
   return d.positive || 0
+}
+
+function useLineChartPoints(xScale, yScale, data, xDomainFn, yDomainFn) {
+  return useMemo(() => {
+    return data.map((d) => {
+      return [xScale(xDomainFn(d)), yScale(yDomainFn(d))]
+    })
+  }, [data, xScale, yScale])
+}
+
+function getYAsixMax(releventWars) {
+  if (!releventWars || releventWars.length === 0) {
+    return undefined
+  } else {
+    const [last] = releventWars.slice(-1)
+    return releventWars && last ? last.dead : undefined
+  }
 }

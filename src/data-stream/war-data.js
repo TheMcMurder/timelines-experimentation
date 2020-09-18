@@ -43,20 +43,30 @@ const engagementsSorted = [
   },
 ]
 
-export function getClosestLargerWarData(value) {
+export function getIndexOfNextLargerWar(value) {
   const lastIndex = engagementsSorted.length - 1
   if (value <= engagementsSorted[0].dead || value == undefined) {
-    return engagementsSorted[0]
+    return 0
   } else if (value < engagementsSorted[lastIndex].dead) {
     for (let i = 0; i < engagementsSorted.length; i++) {
       const current = engagementsSorted[i]
       if (value < current.dead) {
-        return current
+        return i
       }
     }
   } else {
-    return engagementsSorted[lastIndex]
+    return lastIndex
   }
+}
+
+export function getAllWarsSmallerAndNextLarger(value) {
+  const nextLarger = getIndexOfNextLargerWar(value) + 1
+  return engagementsSorted.slice(0, nextLarger)
+}
+
+export function getClosestLargerWarData(value) {
+  const relevent = getAllWarsSmallerAndNextLarger(value)
+  return relevent[relevent.length - 1].name
 }
 
 // console.log('0', getClosestLargerWarData(0)) // gulf war
