@@ -1,4 +1,4 @@
-import { last } from 'rxjs/operators'
+import { schemeCategory10 } from 'd3'
 
 const engagementsSorted = [
   {
@@ -41,7 +41,7 @@ const engagementsSorted = [
     name: 'World War 2',
     dead: 1076245,
   },
-]
+].map((war, index) => ({ ...war, color: schemeCategory10[index] }))
 
 export function getIndexOfNextLargerWar(value) {
   const lastIndex = engagementsSorted.length - 1

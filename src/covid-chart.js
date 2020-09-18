@@ -7,18 +7,20 @@ import SvgLine from './line-chart/svg-line.js'
 import WarLines from './line-chart/war-lines.js'
 
 export default function CovidChart({ margin, width, height }) {
-  const { data, releventWars = [] } = useLiveData$()
+  const { data, releventWars = [], lastDay } = useLiveData$()
   const yAxisMax = getYAsixMax(releventWars)
   const [latest] = data.slice(-1)
-  const xScale = useGetUtcScaleFn({ margin, domainFn: xDomainFn, data, width, height })
+  const xScale = useGetUtcScaleFn({ margin, domainFn: xDomainFn, data, width, height, scaleMax: lastDay })
   const yScale = useGetLinearScaleFn({ margin, domainFn: deathsFn, data, scaleMax: yAxisMax, width, height })
   const deathPoints = useLineChartPoints(xScale, yScale, data, xDomainFn, deathsFn)
   return (
     <div>
-      <div>Day: {latest && latest.date.toLocaleString()}</div>
+      <div className="flex w-100 justify-center items-center">
+        {latest && latest.death && latest.death > 0 && (
+          <h1 className="text-xl">{latest && latest.death.toLocaleString()} Dead</h1>
+        )}
+      </div>
       <svg viewBox={[0, 0, width, height]}>
-        <SvgLine points={deathPoints} />
-        {true && <WarLines releventWars={releventWars} xScale={xScale} yScale={yScale} />}
         <LeftValueAxis scale={yScale} translateX={margin.left} />
         <BottomTimeAxis
           scale={xScale}
@@ -26,6 +28,8 @@ export default function CovidChart({ margin, width, height }) {
           marginLeft={margin.left}
           width={width - margin.right}
         />
+        {true && <WarLines releventWars={releventWars} xScale={xScale} yScale={yScale} />}
+        <SvgLine points={deathPoints} stroke={'#8A0707'} />
       </svg>
     </div>
   )

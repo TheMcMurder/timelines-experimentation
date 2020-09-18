@@ -5,8 +5,15 @@ import { getAllWarsSmallerAndNextLarger } from './war-data.js'
 
 const APIURL = 'https://api.covidtracking.com/v1/us/daily.json'
 
-const data$ = from(fetch(APIURL).then((r) => r.json())).pipe(
+let lastDayOfData = new Date()
+
+const data$ = from(
+  fetch(APIURL).then((r) => {
+    return r.json()
+  }),
+).pipe(
   map((data) => {
+    lastDayOfData = new Date(data[0].dateChecked)
     return data.reverse().map((d) => ({
       ...d,
       date: new Date(d.dateChecked),
@@ -24,10 +31,12 @@ export const liveData$ = data$.pipe(
     )
   }),
   map((data) => {
-    const releventWars = getAllWarsSmallerAndNextLarger(data[data.length - 1].death)
+    const [latest] = data.slice(-1)
+    const releventWars = getAllWarsSmallerAndNextLarger(latest.death)
     return {
       data,
       releventWars,
+      lastDay: lastDayOfData,
     }
   }),
 )

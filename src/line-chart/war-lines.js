@@ -1,24 +1,18 @@
 import React, { useMemo } from 'react'
 import SvgLine from './svg-line.js'
-import { schemeDark2, scaleOrdinal } from 'd3'
-
-window.colors = scaleOrdinal(schemeDark2)
-const colors = window.colors
 
 export default function WarLines({ releventWars, xScale, yScale }) {
-  return releventWars.map((war, index) => (
-    <WarLine xScale={xScale} yScale={yScale} war={war} key={war.name} color={colors(index)} />
-  ))
+  return releventWars.map((war) => <WarLine xScale={xScale} yScale={yScale} war={war} key={war.name} />)
 }
 
-function WarLine({ war, xScale, yScale, color }) {
+function WarLine({ war, xScale, yScale }) {
   const [minDate, maxDate] = xScale.domain()
   const data = [
     [minDate, war.dead],
     [maxDate, war.dead],
   ]
   const points = useLineChartPoints(xScale, yScale, data)
-  return <SvgLine points={points} stroke={color} />
+  return <SvgLine points={points} stroke={war.color} />
 }
 
 function useLineChartPoints(xScale, yScale, data) {
