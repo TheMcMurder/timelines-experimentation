@@ -3,12 +3,15 @@ const LineChart = lazy(() => import('./line-chart/line-chart.js'))
 import { useLiveData$ } from './data-stream/data-stream.js'
 
 export default function CovidChart(props) {
-  const data = useLiveData$()
+  const { data, closestWar } = useLiveData$()
+  console.log('closestWar', closestWar)
+  const yAxisMax = closestWar?.dead * 1.1 || undefined
+  console.log('yAxisMax', yAxisMax)
   const [latest] = data.slice(-1)
   return (
     <Suspense fallback={null}>
       <div>Day: {latest && latest.date.toLocaleString()}</div>
-      <LineChart {...props} data={data} xDomainFn={xDomainFn} yDomainFn={deathsFn} />
+      <LineChart {...props} data={data} xDomainFn={xDomainFn} yDomainFn={deathsFn} yAxisMax={yAxisMax} />
     </Suspense>
   )
 }

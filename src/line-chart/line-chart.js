@@ -4,17 +4,7 @@ import BottomTimeAxis from './bottom-time-axis/bottom-time-axis.js'
 import LeftValueAxis from './left-value-axis/left-value-axis.js'
 import SvgLine from './svg-line.js'
 
-export default function LineChart({ data, margin, height, width, xDomainFn, yDomainFn }) {
-  // const [v, setV] = useState(0)
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setV((v0) => v0 + 1)
-  //   }, 1000)
-  //   return () => {
-  //     window.clearInterval(interval)
-  //   }
-  // }, [])
-  // console.log('v', v)
+export default function LineChart({ data, margin, height, width, xDomainFn, yDomainFn, yAxisMax }) {
   const xScale = useMemo(
     () =>
       scaleUtc()
@@ -25,7 +15,7 @@ export default function LineChart({ data, margin, height, width, xDomainFn, yDom
   const yScale = useMemo(
     () =>
       scaleLinear()
-        .domain([0, max(data, yDomainFn)])
+        .domain([0, yAxisMax ? yAxisMax : max(data, yDomainFn)])
         .nice()
         .range([height - margin.bottom, margin.top]),
     [data, margin.bottom, height, margin.top],
