@@ -12,7 +12,18 @@ function WarLine({ war, xScale, yScale }) {
     [maxDate, war.dead],
   ]
   const points = useLineChartPoints(xScale, yScale, data)
-  return <SvgLine points={points} stroke={war.color} />
+  return (
+    <>
+      <SvgLine points={points} stroke={war.color} strokeWidth="0.5" />
+      <text
+        transform={`translate(${points[0][0]}, ${points[0][1] - 0.5})`}
+        fill={war.color}
+        style={{ fontSize: '0.5rem' }}
+      >
+        {war.name}
+      </text>
+    </>
+  )
 }
 
 function useLineChartPoints(xScale, yScale, data) {

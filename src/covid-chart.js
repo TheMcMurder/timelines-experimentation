@@ -13,12 +13,11 @@ export default function CovidChart({ margin, width, height }) {
   const xScale = useGetUtcScaleFn({ margin, domainFn: xDomainFn, data, width, height, scaleMax: lastDay })
   const yScale = useGetLinearScaleFn({ margin, domainFn: deathsFn, data, scaleMax: yAxisMax, width, height })
   const deathPoints = useLineChartPoints(xScale, yScale, data, xDomainFn, deathsFn)
+  const dead = latest?.death || 0
   return (
     <div>
       <div className="flex w-100 justify-center items-center">
-        {latest && latest.death && latest.death > 0 && (
-          <h1 className="text-xl">{latest && latest.death.toLocaleString()} Dead</h1>
-        )}
+        <h1 className="text-xl">{dead.toLocaleString()} Dead from COVID-19</h1>
       </div>
       <svg viewBox={[0, 0, width, height]}>
         <LeftValueAxis scale={yScale} translateX={margin.left} />
