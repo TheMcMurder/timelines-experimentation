@@ -27,7 +27,7 @@ export default function CovidChart({ margin, width, height }) {
           marginLeft={margin.left}
           width={width - margin.right}
         />
-        {true && <WarLines releventWars={releventWars} xScale={xScale} yScale={yScale} />}
+        {true && <WarLines dead={dead} releventWars={releventWars} xScale={xScale} yScale={yScale} />}
         <SvgLine points={deathPoints} stroke={'#8A0707'} />
       </svg>
     </div>

@@ -1,8 +1,14 @@
 import React, { useMemo } from 'react'
 import SvgLine from './svg-line.js'
 
-export default function WarLines({ releventWars, xScale, yScale }) {
-  return releventWars.map((war) => <WarLine xScale={xScale} yScale={yScale} war={war} key={war.name} />)
+export default function WarLines({ dead, releventWars, xScale, yScale }) {
+  return releventWars.map((war) => {
+    if (war.hidePoint && dead > war.hidePoint) {
+      return null
+    } else {
+      return <WarLine xScale={xScale} yScale={yScale} war={war} key={war.name} />
+    }
+  })
 }
 
 function WarLine({ war, xScale, yScale }) {

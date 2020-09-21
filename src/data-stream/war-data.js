@@ -8,10 +8,12 @@ const engagementsSorted = [
   {
     name: 'Mexican-American War',
     dead: 17435,
+    hidePoint: 130000,
   },
   {
     name: 'War of 1812',
     dead: 20000,
+    hidePoint: 130000,
   },
   {
     name: 'War on Terror (Afghanistan)',
