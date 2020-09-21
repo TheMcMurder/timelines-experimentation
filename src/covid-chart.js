@@ -5,6 +5,7 @@ import BottomTimeAxis from './line-chart/bottom-time-axis/bottom-time-axis.js'
 import LeftValueAxis from './line-chart/left-value-axis/left-value-axis.js'
 import SvgLine from './line-chart/svg-line.js'
 import WarLines from './line-chart/war-lines.js'
+import Controls from './controls/controls.js'
 
 export default function CovidChart({ margin, width, height }) {
   const { data, releventWars = [], lastDay } = useLiveData$()
@@ -16,6 +17,7 @@ export default function CovidChart({ margin, width, height }) {
   const dead = latest?.death || 0
   return (
     <div>
+      <Controls />
       <div className="flex w-100 justify-center items-center">
         <h1 className="text-xl">{dead.toLocaleString()} Dead from COVID-19</h1>
       </div>

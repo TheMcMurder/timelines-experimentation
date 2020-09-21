@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { from, interval } from 'rxjs'
-import { scan, take, map, mergeMap } from 'rxjs/operators'
+import { scan, take, map, mergeMap, tap } from 'rxjs/operators'
 import { getAllWarsSmallerAndNextLarger } from './war-data.js'
+import { initializeTime } from '../controls/time-stream.js'
 
 const APIURL = 'https://api.covidtracking.com/v1/us/daily.json'
 
@@ -19,6 +20,7 @@ const data$ = from(
       date: new Date(d.dateChecked),
     }))
   }),
+  tap((data) => initializeTime(data[0].date, data[data.length - 1].date)),
 )
 
 export const liveData$ = data$.pipe(
@@ -62,3 +64,23 @@ export const useData$ = function () {
   }, [])
   return data
 }
+
+// const stopWatch$ = events$.pipe(
+//   startWith({
+//     speed: 1000,
+//     value: 0,
+//   }),
+//   scan((state, curr) => ({ ...state, ...curr }), {}),
+//   // tap((state) => setValue(state.value)),
+//   // switchMap((state) =>
+//   //   // state.count
+//   //   //   ? interval(state.speed).pipe(
+//   //   //       tap(
+//   //   //         _ =>
+//   //   //           (state.value += state.countup ? state.increase : -state.increase)
+//   //   //       ),
+//   //   //       tap(_ => setValue(state.value))
+//   //   //     )
+//   //   //   : NEVER
+//   // )
+// );
