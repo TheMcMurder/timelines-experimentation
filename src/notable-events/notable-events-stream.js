@@ -79,3 +79,5 @@ const trumpEvents = [
     source: 'https://twitter.com/realDonaldTrump/status/1232058127740174339',
   },
 ]
+
+// pretty good starting point for trump https://www.poynter.org/fact-checking/2020/we-have-it-totally-under-control-a-timeline-of-president-donald-trumps-response-to-the-coronavirus-pandemic/
