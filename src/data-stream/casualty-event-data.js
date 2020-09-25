@@ -1,19 +1,20 @@
 import { schemeCategory10 } from 'd3'
 
-const engagementsSorted = [
+const casualtyEventsSorted = [
   {
     name: 'Gulf War',
     dead: 1143,
+    hidePoint: 128650,
   },
   {
     name: 'Mexican-American War',
     dead: 17435,
-    hidePoint: 130000,
+    hidePoint: 50000,
   },
   {
     name: 'War of 1812',
     dead: 20000,
-    hidePoint: 130000,
+    hidePoint: 50000,
   },
   {
     name: 'War on Terror (Afghanistan)',
@@ -43,15 +44,15 @@ const engagementsSorted = [
     name: 'World War 2',
     dead: 1076245,
   },
-].map((war, index) => ({ ...war, color: schemeCategory10[index] }))
+].map((event, index) => ({ ...event, color: schemeCategory10[index] }))
 
-export function getIndexOfNextLargerWar(value) {
-  const lastIndex = engagementsSorted.length - 1
-  if (value <= engagementsSorted[0].dead || value == undefined) {
+export function getIndexOfNextLargerEvent(value) {
+  const lastIndex = casualtyEventsSorted.length - 1
+  if (value <= casualtyEventsSorted[0].dead || value == undefined) {
     return 0
-  } else if (value < engagementsSorted[lastIndex].dead) {
-    for (let i = 0; i < engagementsSorted.length; i++) {
-      const current = engagementsSorted[i]
+  } else if (value < casualtyEventsSorted[lastIndex].dead) {
+    for (let i = 0; i < casualtyEventsSorted.length; i++) {
+      const current = casualtyEventsSorted[i]
       if (value < current.dead) {
         return i
       }
@@ -61,13 +62,13 @@ export function getIndexOfNextLargerWar(value) {
   }
 }
 
-export function getAllWarsSmallerAndNextLarger(value) {
-  const nextLarger = getIndexOfNextLargerWar(value) + 1
-  return engagementsSorted.slice(0, nextLarger)
+export function getAllEventsSmallerAndNextLarger(value) {
+  const nextLarger = getIndexOfNextLargerEvent(value) + 1
+  return casualtyEventsSorted.slice(0, nextLarger)
 }
 
-export function getClosestLargerWarData(value) {
-  const relevent = getAllWarsSmallerAndNextLarger(value)
+export function getClosestLargerEventData(value) {
+  const relevent = getAllEventsSmallerAndNextLarger(value)
   return relevent[relevent.length - 1].name
 }
 

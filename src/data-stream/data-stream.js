@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { from, interval, combineLatest } from 'rxjs'
 import { scan, take, map, mergeMap, tap } from 'rxjs/operators'
-import { getAllWarsSmallerAndNextLarger } from './war-data.js'
+import { getAllEventsSmallerAndNextLarger } from './casualty-event-data.js'
 import { initializeTime } from '../controls/time-stream.js'
 import { timeState$ } from '../controls/time-stream.js'
 
@@ -28,7 +28,7 @@ export const liveData$ = combineLatest([data$, timeState$]).pipe(
   map(([data, time]) => {
     const { currentDay, lastDay } = time
     const dataForCurrentDay = data[time.count]
-    const releventWars = getAllWarsSmallerAndNextLarger(dataForCurrentDay.death)
+    const releventEvents = getAllEventsSmallerAndNextLarger(dataForCurrentDay.death)
     const percentage = ((time.count + 1) / data.length) * 100
     return {
       percentage,
@@ -36,7 +36,7 @@ export const liveData$ = combineLatest([data$, timeState$]).pipe(
       currentDay,
       dataForCurrentDay,
       lastDay,
-      releventWars,
+      releventEvents,
       lastDay: lastDayOfData,
     }
   }),

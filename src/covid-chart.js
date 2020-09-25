@@ -4,12 +4,12 @@ import { useGetLinearScaleFn, useGetUtcScaleFn } from './line-chart/scales.js'
 import BottomTimeAxis from './line-chart/bottom-time-axis/bottom-time-axis.js'
 import LeftValueAxis from './line-chart/left-value-axis/left-value-axis.js'
 import SvgLine from './line-chart/svg-line.js'
-import WarLines from './line-chart/war-lines.js'
+import CasualtyEventLines from './line-chart/causalty-event-lines.js'
 import Controls from './controls/controls.js'
 
 export default function CovidChart({ margin, width, height }) {
-  const { lineChartData, dataForCurrentDay, releventWars = [], lastDay, percentage = 0 } = useLiveData$()
-  const yAxisMax = getYAsixMax(releventWars)
+  const { lineChartData, dataForCurrentDay, releventEvents = [], lastDay, percentage = 0 } = useLiveData$()
+  const yAxisMax = getYAsixMax(releventEvents)
   const xScale = useGetUtcScaleFn({
     margin,
     domainFn: xDomainFn,
@@ -49,7 +49,7 @@ export default function CovidChart({ margin, width, height }) {
           marginLeft={margin.left}
           width={width - margin.right}
         />
-        {true && <WarLines dead={dead} releventWars={releventWars} xScale={xScale} yScale={yScale} />}
+        {true && <CasualtyEventLines dead={dead} releventEvents={releventEvents} xScale={xScale} yScale={yScale} />}
         <SvgLine points={deathPoints} stroke={'url(#myGradient)'} />
       </svg>
     </div>

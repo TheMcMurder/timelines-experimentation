@@ -1,5 +1,5 @@
 import { interval, NEVER, ReplaySubject, Subject } from 'rxjs'
-import { scan, shareReplay, startWith, switchMap, tap, map } from 'rxjs/operators'
+import { scan, startWith, switchMap, tap, map } from 'rxjs/operators'
 
 const msInADay = 86400000
 
