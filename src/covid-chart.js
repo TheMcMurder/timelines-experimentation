@@ -29,9 +29,9 @@ export default function CovidChart({ margin, width, height }) {
   const deathPoints = useLineChartPoints(xScale, yScale, lineChartData, xDomainFn, deathsFn)
   const dead = dataForCurrentDay?.death || 0
   return (
-    <div>
+    <div className="max-w-full max-h-full">
       <Controls />
-      <div className="flex w-100 justify-center items-center flex-col">
+      <div className="flex w-full justify-center items-center flex-col">
         <h1 className="text-xl">{dead.toLocaleString()} Dead from COVID-19</h1>
         <div>{dataForCurrentDay && dataForCurrentDay.date.toLocaleString()}</div>
       </div>
