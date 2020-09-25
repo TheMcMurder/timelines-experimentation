@@ -6,6 +6,7 @@ import LeftValueAxis from './line-chart/left-value-axis/left-value-axis.js'
 import SvgLine from './line-chart/svg-line.js'
 import CasualtyEventLines from './line-chart/causalty-event-lines.js'
 import Controls from './controls/controls.js'
+import NotableEvents from './notable-events/notable-events.js'
 
 export default function CovidChart({ margin, width, height }) {
   const { lineChartData, dataForCurrentDay, releventEvents = [], lastDay, percentage = 0 } = useLiveData$()
@@ -51,6 +52,16 @@ export default function CovidChart({ margin, width, height }) {
         />
         {true && <CasualtyEventLines dead={dead} releventEvents={releventEvents} xScale={xScale} yScale={yScale} />}
         <SvgLine points={deathPoints} stroke={'url(#myGradient)'} />
+      </svg>
+      <svg viewBox={[0, 0, width, 100]}>
+        <NotableEvents
+          height={100}
+          currentDay={dataForCurrentDay ? dataForCurrentDay.date : undefined}
+          xScale={xScale}
+          marginLeft={margin.left}
+          width={width - margin.right}
+          marginRight={margin.right}
+        />
       </svg>
     </div>
   )

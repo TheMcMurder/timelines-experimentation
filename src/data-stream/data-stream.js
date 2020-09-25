@@ -41,25 +41,6 @@ export const liveData$ = combineLatest([data$, timeState$]).pipe(
     }
   }),
 )
-// export const liveData$ = data$.pipe(
-//   mergeMap((data) => {
-//     return interval(100).pipe(
-//       take(data.length),
-//       scan((acc, currentIndex) => {
-//         return [...acc, data[currentIndex]]
-//       }, []),
-//     )
-//   }),
-//   map((data) => {
-//     const [latest] = data.slice(-1)
-//     const releventWars = getAllWarsSmallerAndNextLarger(latest.death)
-//     return {
-//       data,
-//       releventWars,
-//       lastDay: lastDayOfData,
-//     }
-//   }),
-// )
 
 export const useLiveData$ = function () {
   const [data, setData] = useState({ lineChartData: [] })
@@ -82,23 +63,3 @@ export const useData$ = function () {
   }, [])
   return data
 }
-
-// const stopWatch$ = events$.pipe(
-//   startWith({
-//     speed: 1000,
-//     value: 0,
-//   }),
-//   scan((state, curr) => ({ ...state, ...curr }), {}),
-//   // tap((state) => setValue(state.value)),
-//   // switchMap((state) =>
-//   //   // state.count
-//   //   //   ? interval(state.speed).pipe(
-//   //   //       tap(
-//   //   //         _ =>
-//   //   //           (state.value += state.countup ? state.increase : -state.increase)
-//   //   //       ),
-//   //   //       tap(_ => setValue(state.value))
-//   //   //     )
-//   //   //   : NEVER
-//   // )
-// );
