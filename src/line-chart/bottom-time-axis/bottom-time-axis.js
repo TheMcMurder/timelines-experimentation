@@ -1,4 +1,6 @@
 import React from 'react'
+import { timeFormat } from 'd3'
+const formatTime = timeFormat('%b %d, %y')
 
 export default function BottomTimeAxis({ scale, translateY, marginLeft, width }) {
   const ticks = scale.ticks()
@@ -17,7 +19,7 @@ export default function BottomTimeAxis({ scale, translateY, marginLeft, width })
           <g key={date.toUTCString()} className="tick" opacity="1" transform={`translate(${scale(date) + 0.5}, 0)`}>
             <line stroke="currentColor" y2="6" />
             <text fill="currentColor" y="9" dy="0.71em">
-              {`${date.getUTCDate()}-${date.getUTCMonth() + 1}-${date.getUTCFullYear()}`}
+              {formatTime(date)}
             </text>
           </g>
         )

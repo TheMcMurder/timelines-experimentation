@@ -33,7 +33,7 @@ export default function CovidChart({ margin, width, height }) {
     <div className="max-w-full max-h-full">
       <Controls />
       <div className="flex w-full justify-center items-center flex-col">
-        <h1 className="text-xl">{dead.toLocaleString()} Dead from COVID-19</h1>
+        <h1 className="text-xl">{dead.toLocaleString()} Dead Americans from COVID-19</h1>
         <div>{dataForCurrentDay && dataForCurrentDay.date.toLocaleString()}</div>
       </div>
       <svg viewBox={[0, 0, width, height]}>
@@ -53,16 +53,14 @@ export default function CovidChart({ margin, width, height }) {
         {true && <CasualtyEventLines dead={dead} releventEvents={releventEvents} xScale={xScale} yScale={yScale} />}
         <SvgLine points={deathPoints} stroke={'url(#myGradient)'} />
       </svg>
-      <svg viewBox={[0, 0, width, 100]}>
-        <NotableEvents
-          height={100}
-          currentDay={dataForCurrentDay ? dataForCurrentDay.date : undefined}
-          xScale={xScale}
-          marginLeft={margin.left}
-          width={width - margin.right}
-          marginRight={margin.right}
-        />
-      </svg>
+      <NotableEvents
+        height={100}
+        currentDay={dataForCurrentDay ? dataForCurrentDay.date : undefined}
+        xScale={xScale}
+        marginLeft={margin.left}
+        width={width - margin.right}
+        marginRight={margin.right}
+      />
     </div>
   )
 }
