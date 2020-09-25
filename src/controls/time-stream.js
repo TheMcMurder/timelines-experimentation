@@ -1,23 +1,36 @@
 import { interval, NEVER, ReplaySubject, Subject } from 'rxjs'
 import { scan, shareReplay, startWith, switchMap, tap, map } from 'rxjs/operators'
 
+const msInADay = 86400000
+
 const __time$ = new Subject()
 const _timeState$ = new ReplaySubject(1)
+export const timeState$ = _timeState$.asObservable()
 
 const _time$ = __time$.asObservable().pipe(
   startWith({
+    count: 0,
     currentDay: null,
     lastDay: null,
     playing: false,
     initialized: false,
-    speed: 100,
+    speed: 30,
   }),
   scan(reducer, {}),
   tap((state) => {
     _timeState$.next(state)
   }),
   switchMap((state) => {
-    if (state.playing && state.currentDay.getTime() < state.lastDay.getTime()) {
+    const { currentDay, lastDay, playing } = state
+    let timeDifference
+    if (lastDay && currentDay) {
+      timeDifference = lastDay.getTime() - currentDay.getTime()
+    }
+    if (
+      playing &&
+      currentDay.getTime() < lastDay.getTime() &&
+      (timeDifference === undefined || currentDay.getTime() + msInADay < lastDay.getTime())
+    ) {
       return interval(state.speed).pipe(
         tap(() => {
           triggerNextDay()
@@ -31,7 +44,7 @@ const _time$ = __time$.asObservable().pipe(
 )
 
 const sub = _time$.subscribe()
-const test = _timeState$.subscribe((v) => console.log('test', v))
+const test = _timeState$.subscribe()
 
 export const time$ = _timeState$.asObservable()
 
@@ -60,6 +73,7 @@ function reducer(acc, current, index) {
       currentDay: current.payload.startingDate,
       initalized: true,
       lastDay: current.payload.endingDate,
+      count: 0,
     }
   } else if (current.type === 'pause') {
     return {
@@ -79,6 +93,7 @@ function reducer(acc, current, index) {
       nextDay.setDate(nextDay.getDate() + 1)
       return {
         ...acc,
+        count: acc.count + 1,
         currentDay: nextDay,
       }
     }

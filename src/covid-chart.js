@@ -8,20 +8,40 @@ import WarLines from './line-chart/war-lines.js'
 import Controls from './controls/controls.js'
 
 export default function CovidChart({ margin, width, height }) {
-  const { data, releventWars = [], lastDay } = useLiveData$()
+  const { lineChartData, dataForCurrentDay, releventWars = [], lastDay, percentage = 0 } = useLiveData$()
   const yAxisMax = getYAsixMax(releventWars)
-  const [latest] = data.slice(-1)
-  const xScale = useGetUtcScaleFn({ margin, domainFn: xDomainFn, data, width, height, scaleMax: lastDay })
-  const yScale = useGetLinearScaleFn({ margin, domainFn: deathsFn, data, scaleMax: yAxisMax, width, height })
-  const deathPoints = useLineChartPoints(xScale, yScale, data, xDomainFn, deathsFn)
-  const dead = latest?.death || 0
+  const xScale = useGetUtcScaleFn({
+    margin,
+    domainFn: xDomainFn,
+    data: lineChartData,
+    width,
+    height,
+    scaleMax: lastDay,
+  })
+  const yScale = useGetLinearScaleFn({
+    margin,
+    domainFn: deathsFn,
+    data: lineChartData,
+    scaleMax: yAxisMax,
+    width,
+    height,
+  })
+  const deathPoints = useLineChartPoints(xScale, yScale, lineChartData, xDomainFn, deathsFn)
+  const dead = dataForCurrentDay?.death || 0
   return (
     <div>
       <Controls />
-      <div className="flex w-100 justify-center items-center">
+      <div className="flex w-100 justify-center items-center flex-col">
         <h1 className="text-xl">{dead.toLocaleString()} Dead from COVID-19</h1>
+        <div>{dataForCurrentDay && dataForCurrentDay.date.toLocaleString()}</div>
       </div>
       <svg viewBox={[0, 0, width, height]}>
+        <defs>
+          <linearGradient id="myGradient">
+            <stop offset={`${percentage}%`} stopColor="#8A0707" />
+            <stop offset={`${percentage}%`} stopColor="transparent" />
+          </linearGradient>
+        </defs>
         <LeftValueAxis scale={yScale} translateX={margin.left} />
         <BottomTimeAxis
           scale={xScale}
@@ -30,7 +50,7 @@ export default function CovidChart({ margin, width, height }) {
           width={width - margin.right}
         />
         {true && <WarLines dead={dead} releventWars={releventWars} xScale={xScale} yScale={yScale} />}
-        <SvgLine points={deathPoints} stroke={'#8A0707'} />
+        <SvgLine points={deathPoints} stroke={'url(#myGradient)'} />
       </svg>
     </div>
   )
