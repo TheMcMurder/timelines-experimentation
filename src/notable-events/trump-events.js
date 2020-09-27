@@ -49,7 +49,6 @@ export const trumpEvents = [
     type: 'TWEET',
     date: new Date('2020-02-24'),
     update: [
-      { text: `Stock market plummets`, source: 'https://www.cnbc.com/2020/02/24/us-futures-coronavirus-outbreak.html' },
       {
         text: `Trump Requests 1.25 billion in emergency funding`,
         source: 'https://www.politico.com/news/2020/02/24/trump-coronavirus-budget-request-117275',
