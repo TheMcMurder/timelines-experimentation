@@ -92,4 +92,14 @@ export const neutralEvents = [
       },
     ],
   },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-04-20'),
+    update: [
+      {
+        text: `New York Governor orders all non-essential buisinesses to keep their workers at home`,
+        source: 'https://www.nytimes.com/2020/03/20/nyregion/coronavirus-new-york-update.html',
+      },
+    ],
+  },
 ]
