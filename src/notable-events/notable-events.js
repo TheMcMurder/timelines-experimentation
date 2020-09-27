@@ -15,10 +15,10 @@ export default function NotableEvents(props) {
         <div className="bg-gray-100 w-full">
           <div className="m-2 flex">
             <div className="flex-1 flex-col flex justify-center items-center">
-              {highlightedNeutralEvent && <NeutralEvent event={highlightedNeutralEvent} />}
+              {highlightedBidenEvent && <BidenEvent event={highlightedBidenEvent} />}
             </div>
             <div className="flex-1 flex-col flex justify-center items-center">
-              {highlightedBidenEvent && <BidenEvent event={highlightedBidenEvent} />}
+              {highlightedNeutralEvent && <NeutralEvent event={highlightedNeutralEvent} />}
             </div>
             <div className="flex-1 flex-col flex justify-center items-center">
               {highlightedTrumpEvent && <TrumpEvent event={highlightedTrumpEvent} />}
