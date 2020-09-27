@@ -9,7 +9,6 @@ export const timeState$ = _timeState$.asObservable()
 
 const _time$ = __time$.asObservable().pipe(
   startWith({
-    count: 0,
     currentDay: null,
     lastDay: null,
     playing: false,
@@ -52,6 +51,10 @@ function triggerNextDay() {
   __time$.next({ type: 'increment' })
 }
 
+export function triggerSpecificDay(specificDate) {
+  __time$.next({ type: 'setDate', payload: { specificDate } })
+}
+
 export function initializeTime(startingDate, endingDate) {
   __time$.next({ type: 'initialize', payload: { startingDate, endingDate } })
 }
@@ -73,7 +76,6 @@ function reducer(acc, current, index) {
       currentDay: current.payload.startingDate,
       initalized: true,
       lastDay: current.payload.endingDate,
-      count: 0,
     }
   } else if (current.type === 'pause') {
     return {
@@ -93,11 +95,20 @@ function reducer(acc, current, index) {
       nextDay.setDate(nextDay.getDate() + 1)
       return {
         ...acc,
-        count: acc.count + 1,
         currentDay: nextDay,
+      }
+    } else if (current.type === 'setDate') {
+      return {
+        ...acc,
+        playing: false,
+        currentDay: current.payload.specificDate,
       }
     }
     return acc
   }
   return acc
+}
+
+export function isRoughlySameDate(date1, date2) {
+  return Math.abs(date1.getTime() - date2.getTime()) < msInADay
 }

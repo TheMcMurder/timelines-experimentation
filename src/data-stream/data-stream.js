@@ -3,7 +3,7 @@ import { from, interval, combineLatest } from 'rxjs'
 import { scan, take, map, mergeMap, tap } from 'rxjs/operators'
 import { getAllEventsSmallerAndNextLarger } from './casualty-event-data.js'
 import { initializeTime } from '../controls/time-stream.js'
-import { timeState$ } from '../controls/time-stream.js'
+import { timeState$, isRoughlySameDate } from '../controls/time-stream.js'
 
 const APIURL = 'https://api.covidtracking.com/v1/us/daily.json'
 
@@ -27,9 +27,13 @@ const data$ = from(
 export const liveData$ = combineLatest([data$, timeState$]).pipe(
   map(([data, time]) => {
     const { currentDay, lastDay } = time
-    const dataForCurrentDay = data[time.count]
+    const findIndex = data.findIndex((d) => {
+      return isRoughlySameDate(currentDay, d.date)
+    })
+    const index = findIndex !== -1 ? findIndex : 0
+    const dataForCurrentDay = data[index]
     const releventEvents = getAllEventsSmallerAndNextLarger(dataForCurrentDay.death)
-    const percentage = ((time.count + 1) / data.length) * 100
+    const percentage = ((index + 1) / data.length) * 100
     return {
       percentage,
       lineChartData: data,

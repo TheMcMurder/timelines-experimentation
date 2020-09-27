@@ -3,6 +3,7 @@ import { from, ReplaySubject } from 'rxjs'
 import { map, tap } from 'rxjs/operators'
 import { trumpEvents } from './trump-events.js'
 import { neutralEvents } from './neutral-events.js'
+import { isRoughlySameDate } from '../controls/time-stream.js'
 
 const msInADay = 86400000
 
@@ -45,10 +46,8 @@ export function getTrumpEvents$(scale, currentDay) {
       })
     }),
     tap((events) => {
-      const todayEvents = events.filter((evt) => Math.abs(evt.date.getTime() - currentDay.getTime()) < msInADay)
-      if (todayEvents.length > 0) {
-        _trumpEvent$.next(todayEvents)
-      }
+      const todayEvents = events.filter((evt) => isRoughlySameDate(evt.date, currentDay))
+      _trumpEvent$.next(todayEvents)
     }),
   )
 }
@@ -61,10 +60,8 @@ export function getNeutralEvents$(scale, currentDay) {
       })
     }),
     tap((events) => {
-      const todayEvents = events.filter((evt) => Math.abs(evt.date.getTime() - currentDay.getTime()) < msInADay)
-      if (todayEvents.length > 0) {
-        _neutralEvent$.next(todayEvents)
-      }
+      const todayEvents = events.filter((evt) => isRoughlySameDate(evt.date, currentDay))
+      _neutralEvent$.next(todayEvents)
     }),
   )
 }
