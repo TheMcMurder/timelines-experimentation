@@ -8,6 +8,10 @@ export function BidenEvent({ event }) {
   return <Event person="BIDEN" event={event} />
 }
 
+export function NeutralEvent({ event }) {
+  return <Event person="NONE" event={event} />
+}
+
 function Event(props) {
   return props.event.map((event) => {
     return (

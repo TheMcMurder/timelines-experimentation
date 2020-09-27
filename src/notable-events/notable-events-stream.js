@@ -2,16 +2,27 @@ import { useState, useEffect } from 'react'
 import { from, ReplaySubject } from 'rxjs'
 import { map, tap } from 'rxjs/operators'
 import { trumpEvents } from './trump-events.js'
+import { neutralEvents } from './neutral-events.js'
 
 const msInADay = 86400000
 
 const _bidenEvent$ = new ReplaySubject(1)
 const _trumpEvent$ = new ReplaySubject(1)
+const _neutralEvent$ = new ReplaySubject(1)
 
 export function useHighlightTrumpEvents() {
   const [event, setEvent] = useState()
   useEffect(() => {
     const sub = _trumpEvent$.subscribe(setEvent)
+    return () => sub.unsubscribe()
+  }, [])
+  return event
+}
+
+export function useHighlightNeutralEvents() {
+  const [event, setEvent] = useState()
+  useEffect(() => {
+    const sub = _neutralEvent$.subscribe(setEvent)
     return () => sub.unsubscribe()
   }, [])
   return event
@@ -37,6 +48,22 @@ export function getTrumpEvents$(scale, currentDay) {
       const todayEvents = events.filter((evt) => Math.abs(evt.date.getTime() - currentDay.getTime()) < msInADay)
       if (todayEvents.length > 0) {
         _trumpEvent$.next(todayEvents)
+      }
+    }),
+  )
+}
+
+export function getNeutralEvents$(scale, currentDay) {
+  return from([neutralEvents]).pipe(
+    map((events) => {
+      return events.map((e) => {
+        return { ...e, x: scale(e.date) }
+      })
+    }),
+    tap((events) => {
+      const todayEvents = events.filter((evt) => Math.abs(evt.date.getTime() - currentDay.getTime()) < msInADay)
+      if (todayEvents.length > 0) {
+        _neutralEvent$.next(todayEvents)
       }
     }),
   )

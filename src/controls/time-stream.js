@@ -14,7 +14,7 @@ const _time$ = __time$.asObservable().pipe(
     lastDay: null,
     playing: false,
     initialized: false,
-    speed: 1000,
+    speed: 100,
   }),
   scan(reducer, {}),
   tap((state) => {
