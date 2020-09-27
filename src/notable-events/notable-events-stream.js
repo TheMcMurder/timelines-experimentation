@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { from, ReplaySubject } from 'rxjs'
 import { map, tap } from 'rxjs/operators'
-import { trumpEvents } from './trump-events.js'
-import { neutralEvents } from './neutral-events.js'
+import { trumpEvents } from './data/trump-events.js'
+import { neutralEvents } from './data/neutral-events.js'
 import { isRoughlySameDate } from '../controls/time-stream.js'
 
 const msInADay = 86400000
