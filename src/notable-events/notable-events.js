@@ -11,7 +11,7 @@ export default function NotableEvents({ marginRight, height, marginLeft, width, 
   if (currentDay) {
     return (
       <div>
-        <svg viewBox={[0, 0, width, height]}>
+        <svg viewBox={[0, 0, width - marginRight, height]}>
           <g>
             <path stroke="#8A0707" d={`M${0.5 + xScale(currentDay)},0.5v${height}`}></path>
             <g transform={`translate(0, 25)`}>

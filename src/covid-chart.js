@@ -58,7 +58,7 @@ export default function CovidChart({ margin, width, height }) {
         currentDay={dataForCurrentDay ? dataForCurrentDay.date : undefined}
         xScale={xScale}
         marginLeft={margin.left}
-        width={width - margin.right}
+        width={width}
         marginRight={margin.right}
       />
     </div>
