@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { triggerSpecificDay } from '../controls/time-stream.js'
-import { getTrumpEvents$, getNeutralEvents$ } from './notable-events-stream.js'
+import { bidenEvents } from './data/biden-events.js'
+import { getTrumpEvents$, getNeutralEvents$, getBidenEvents$ } from './notable-events-stream.js'
 
 const RepublicanRed = '#DE0100'
 const DemocraticBlue = '#1404BD'
@@ -12,7 +13,7 @@ export default function EventsChart({ currentDay, height, width, marginLeft, mar
       <g>
         <path stroke="#8A0707" strokeWidth={3} d={`M${0.5 + xScale(currentDay)},0.5v${height}`} />
         <g transform={`translate(0, 5)`}>
-          <NeutralEvents
+          <TrumpEvents
             currentDay={currentDay}
             marginRight={marginRight}
             marginLeft={marginLeft}
@@ -21,7 +22,16 @@ export default function EventsChart({ currentDay, height, width, marginLeft, mar
           />
         </g>
         <g transform={`translate(0, 25)`}>
-          <TrumpEvents
+          <NeutralEvents
+            currentDay={currentDay}
+            marginRight={marginRight}
+            marginLeft={marginLeft}
+            width={width - marginRight}
+            xScale={xScale}
+          />
+        </g>
+        <g transform={`translate(0, 45)`}>
+          <BidenEvents
             currentDay={currentDay}
             marginRight={marginRight}
             marginLeft={marginLeft}
@@ -43,8 +53,8 @@ export function TrumpEvents({ marginRight, marginLeft, width, xScale, currentDay
   return (
     <g>
       <path className="domain" stroke="currentColor" d={`M${marginLeft + 0.5},0.5H${width}`} />
-      {trumpEvents.map((evt) => {
-        return <Event event={evt} fill={RepublicanRed} x={evt.x} />
+      {trumpEvents.map((evt, index) => {
+        return <Event key={index} event={evt} fill={RepublicanRed} x={evt.x} />
       })}
     </g>
   )
@@ -60,7 +70,23 @@ export function NeutralEvents({ marginRight, marginLeft, width, xScale, currentD
     <g>
       <path className="domain" stroke="currentColor" d={`M${marginLeft + 0.5},0.5H${width}`} />
       {neutralEvents.map((evt) => {
-        return <Event event={evt} fill={NeutralGray} x={evt.x} />
+        return <Event key={evt.date.getTime()} event={evt} fill={NeutralGray} x={evt.x} />
+      })}
+    </g>
+  )
+}
+
+export function BidenEvents({ marginRight, marginLeft, width, xScale, currentDay }) {
+  const [bidenEvents, setBidenEvents] = useState([])
+  useEffect(() => {
+    const sub = getBidenEvents$(xScale, currentDay).subscribe(setBidenEvents)
+    return () => sub.unsubscribe()
+  }, [xScale, currentDay])
+  return (
+    <g>
+      <path className="domain" stroke="currentColor" d={`M${marginLeft + 0.5},0.5H${width}`} />
+      {bidenEvents.map((evt) => {
+        return <Event key={evt.date} event={evt} fill={DemocraticBlue} x={evt.x} />
       })}
     </g>
   )

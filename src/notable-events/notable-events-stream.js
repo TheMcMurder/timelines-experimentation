@@ -4,6 +4,7 @@ import { map, tap } from 'rxjs/operators'
 import { trumpEvents } from './data/trump-events.js'
 import { neutralEvents } from './data/neutral-events.js'
 import { isRoughlySameDate } from '../controls/time-stream.js'
+import { bidenEvents } from './data/biden-events.js'
 
 const msInADay = 86400000
 
@@ -48,6 +49,20 @@ export function getTrumpEvents$(scale, currentDay) {
     tap((events) => {
       const todayEvents = events.filter((evt) => isRoughlySameDate(evt.date, currentDay))
       _trumpEvent$.next(todayEvents)
+    }),
+  )
+}
+
+export function getBidenEvents$(scale, currentDay) {
+  return from([bidenEvents]).pipe(
+    map((events) => {
+      return events.map((e) => {
+        return { ...e, x: scale(e.date) }
+      })
+    }),
+    tap((events) => {
+      const todayEvents = events.filter((evt) => isRoughlySameDate(evt.date, currentDay))
+      _bidenEvent$.next(todayEvents)
     }),
   )
 }

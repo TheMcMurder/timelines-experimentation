@@ -36,7 +36,7 @@ export const trumpEvents = [
       },
     ],
     quote: `We think we have it very well under control. We have very little problem in this country at this moment... we think it’s going to have a very good ending for it.`,
-    sourceLink: `https://factba.se/transcript/donald-trump-speech-kag-rally-des-moines-iowa-january-30-2020`,
+    sourceLink: `https://www.whitehouse.gov/briefings-statements/remarks-president-trump-usmca-celebration-american-workers-warren-mi/`,
     source: 'Trump Iowa Rally',
   },
   {
@@ -44,6 +44,13 @@ export const trumpEvents = [
     date: new Date('2020-02-02'),
     quote: 'We pretty much shut it down coming in from China.',
     source: 'https://www.foxnews.com/travel/airlines-us-coronavirus-outbreak-travelers-china',
+  },
+  {
+    type: 'QUOTE',
+    date: new Date('2020-02-10'),
+    quote: '"...you know, a lot of people think that [coronavirus] goes away in April with the heat."',
+    source:
+      'https://www.whitehouse.gov/briefings-statements/remarks-president-trump-white-house-business-session-nations-governors/',
   },
   {
     type: 'TWEET',
@@ -67,10 +74,25 @@ export const trumpEvents = [
         source:
           'https://www.whitehouse.gov/briefings-statements/remarks-president-trump-vice-president-pence-members-coronavirus-task-force-press-conference/',
       },
+      {
+        text: `Trump claims media is conspiring with democrats to hype the coronavirus and rattle the markets.`,
+        source: `https://twitter.com/realDonaldTrump/status/1232652371832004608?s=20`,
+      },
+      {
+        text: `Trump claims coronavirus is "going very substantially down, not up."`,
+        source:
+          'https://www.whitehouse.gov/briefings-statements/remarks-president-trump-vice-president-pence-members-coronavirus-task-force-press-conference/',
+      },
     ],
     quote: 'It is what it is.  We’re ready for it.  We’re really prepared.',
     source:
       'https://www.whitehouse.gov/briefings-statements/remarks-president-trump-vice-president-pence-members-coronavirus-task-force-press-conference/',
+  },
+  {
+    type: 'QUOTE',
+    date: new Date('2020-02-27'),
+    quote: 'It’s going to disappear.  One day — it’s like a miracle — it will disappear.',
+    source: 'https://www.whitehouse.gov/briefings-statements/remarks-president-trump-meeting-african-american-leaders/',
   },
   {
     date: new Date('2020-02-29'),
@@ -82,6 +104,29 @@ export const trumpEvents = [
           'https://www.whitehouse.gov/briefings-statements/statement-press-secretary-regarding-presidents-coronavirus-task-force/',
       },
     ],
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-03-09'),
+    source: 'https://twitter.com/realDonaldTrump/status/1237027356314869761',
+    content:
+      'So last year 37,000 Americans died from the common Flu. It averages between 27,000 and 70,000 per year. Nothing is shut down, life & the economy go on. At this moment there are 546 confirmed cases of CoronaVirus, with 22 deaths. Think about that!',
+  },
+  {
+    type: 'QUOTE',
+    date: new Date('2020-03-10'),
+    quote: `It will go away. Just stay calm. It will go away.`,
+    source: 'whitehouse.gov',
+    sourceLink:
+      'https://www.whitehouse.gov/briefings-statements/remarks-president-trump-meeting-republican-senators-2/?utm_source=link&utm_medium=header',
+  },
+  {
+    type: 'QUOTE',
+    date: new Date('2020-03-13'),
+    quote: `I don't take responsibility at all.`,
+    source: 'Press Event in Rose Garden',
+    sourceLink:
+      'https://www.washingtonpost.com/video/politics/i-dont-take-responsibility-at-all-trump-says-on-lack-of-coronavirus-tests/2020/03/13/bfdbdf63-784c-4392-831e-29010ae3b1ac_video.html?itid=lk_inline_manual_37',
   },
   {
     type: 'TWEET',

@@ -15,7 +15,7 @@ export function NeutralEvent({ event }) {
 function Event(props) {
   return props.event.map((event) => {
     return (
-      <div className="rounded-lg overflow-hidden border border-gray-400 p-8 bg-white">
+      <div key={event} className="rounded-lg overflow-hidden border border-gray-400 p-8 bg-white">
         <EventUpdate event={event} />
         {event.type === 'TWEET' && <TweetEvent event={event} />}
         {event.type === 'QUOTE' && <QuoteEvent event={event} />}
@@ -30,7 +30,7 @@ function EventUpdate({ event }) {
       <div className="border-b mx-1 pb-1 mb-2 border-gray-400">
         {event.update.map((update) => {
           return (
-            <div className="font-bold">
+            <div key={update} className="font-bold">
               <a href={update.source}>{update.text}</a>
             </div>
           )
