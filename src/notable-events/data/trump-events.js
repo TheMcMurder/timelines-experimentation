@@ -95,17 +95,6 @@ export const trumpEvents = [
     source: 'https://www.whitehouse.gov/briefings-statements/remarks-president-trump-meeting-african-american-leaders/',
   },
   {
-    date: new Date('2020-02-29'),
-    type: 'UPDATE',
-    update: [
-      {
-        text: 'FDA eases guidelines to encourage more testing',
-        source:
-          'https://www.whitehouse.gov/briefings-statements/statement-press-secretary-regarding-presidents-coronavirus-task-force/',
-      },
-    ],
-  },
-  {
     type: 'TWEET',
     date: new Date('2020-03-06'),
     update: [
@@ -186,16 +175,7 @@ export const trumpEvents = [
     content:
       'I always treated the Chinese Virus very seriously, and have done a very good job from the beginning, including my very early decision to close the “borders” from China - against the wishes of almost all. Many lives were saved. The Fake News new narrative is disgraceful & false!',
   },
-  {
-    type: 'UPDATE',
-    date: new Date('2020-03-18'),
-    update: [
-      {
-        text: 'US senate reveals a $1 trillion economic stimulus package',
-        source: 'https://www.wsj.com/articles/senate-republicans-prepare-third-coronavirus-measure-11584622892',
-      },
-    ],
-  },
+
   {
     type: 'UPDATE',
     date: new Date('2020-03-27'),
@@ -230,6 +210,28 @@ export const trumpEvents = [
       },
     ],
   },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-04-16'),
+    update: [
+      {
+        text: `Trump releases guidelines on reopening the economy.`,
+        source: 'https://www.whitehouse.gov/wp-content/uploads/2020/04/Guidelines-for-Opening-Up-America-Again.pdf',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-04-23'),
+    update: [
+      {
+        text: `Trump suggests getting disinfectant and light inside the body.`,
+        source: 'https://www.youtube.com/watch?v=zicGxU5MfwE&feature=emb_title',
+      },
+    ],
+  },
 ]
 
 // pretty good starting point for trump https://www.poynter.org/fact-checking/2020/we-have-it-totally-under-control-a-timeline-of-president-donald-trumps-response-to-the-coronavirus-pandemic/
+
+// another source: https://www.politifact.com/article/2020/mar/20/how-donald-trump-responded-coronavirus-pandemic/

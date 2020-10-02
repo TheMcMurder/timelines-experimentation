@@ -50,6 +50,17 @@ export const neutralEvents = [
     ],
   },
   {
+    date: new Date('2020-02-29'),
+    type: 'UPDATE',
+    update: [
+      {
+        text: 'FDA eases guidelines to encourage more testing',
+        source:
+          'https://www.whitehouse.gov/briefings-statements/statement-press-secretary-regarding-presidents-coronavirus-task-force/',
+      },
+    ],
+  },
+  {
     type: 'UPDATE',
     date: new Date('2020-03-04'),
     update: [
@@ -94,6 +105,16 @@ export const neutralEvents = [
   },
   {
     type: 'UPDATE',
+    date: new Date('2020-03-18'),
+    update: [
+      {
+        text: 'US senate reveals a $1 trillion economic stimulus package',
+        source: 'https://www.wsj.com/articles/senate-republicans-prepare-third-coronavirus-measure-11584622892',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
     date: new Date('2020-03-20'),
     update: [
       {
@@ -104,6 +125,16 @@ export const neutralEvents = [
         text: `Many other states issue similar orders`,
         source:
           'https://www.usatoday.com/story/news/nation/2020/03/21/coronavirus-lockdown-orders-shelter-place-stay-home-state-list/2891193001/',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-04-11'),
+    update: [
+      {
+        text: `The total number of workers signing up to get unemployment insurance checks reaches nearly 12 million, the highest number (seasonally adjusted) since the government began tracking.`,
+        source: 'https://www.dol.gov/ui/data.pdf',
       },
     ],
   },
