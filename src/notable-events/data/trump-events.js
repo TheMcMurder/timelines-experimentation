@@ -107,6 +107,30 @@ export const trumpEvents = [
   },
   {
     type: 'TWEET',
+    date: new Date('2020-03-06'),
+    update: [
+      {
+        text: `Grand Princess cruise ship waits to dock off California coast`,
+        source:
+          'https://6abc.com/health/live-coronavirus-updates-grand-princess-cruise-ship-anchors-in-sf-bay/5996768/',
+      },
+      {
+        text: `Trump says: "I would rather because I like the numbers being where they are. I don’t need to have the numbers double because of one ship."`,
+        source:
+          'https://www.washingtonpost.com/politics/2020/03/07/which-is-trump-more-worried-about-coronavirus-numbers-or-coronavirus-patients/',
+      },
+      {
+        text: `Testing is in short supply`,
+        source:
+          'https://www.politifact.com/factchecks/2020/mar/11/donald-trump/donald-trumps-wrong-claim-anybody-can-get-tested-c/',
+      },
+    ],
+    source: 'https://twitter.com/realDonaldTrump/status/1236975196642390022',
+    content:
+      'The Fake News Media and their partner, the Democrat Party, is doing everything within its semi-considerable power (it used to be greater!) to inflame the CoronaVirus situation, far beyond what the facts would warrant. Surgeon General, “The risk is low to the average American.”',
+  },
+  {
+    type: 'TWEET',
     date: new Date('2020-03-09'),
     source: 'https://twitter.com/realDonaldTrump/status/1237027356314869761',
     content:
@@ -127,6 +151,50 @@ export const trumpEvents = [
     source: 'Press Event in Rose Garden',
     sourceLink:
       'https://www.washingtonpost.com/video/politics/i-dont-take-responsibility-at-all-trump-says-on-lack-of-coronavirus-tests/2020/03/13/bfdbdf63-784c-4392-831e-29010ae3b1ac_video.html?itid=lk_inline_manual_37',
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-03-13'),
+    update: [
+      {
+        text: `Trump declares national emergency`,
+        source:
+          'https://webcache.googleusercontent.com/search?q=cache:WJXrQ5xGXj0J:https://www.whitehouse.gov/briefings-statements/remarks-president-trump-vice-president-pence-members-coronavirus-task-force-press-conference-3/+&cd=1&hl=en&ct=clnk&gl=us',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-03-17'),
+    update: [
+      {
+        text: `Trump requests a 2 week national quarantine - "we’re asking everyone to work at home, if possible, postpone unnecessary travel, and limit social gatherings to no more than 10 people."`,
+        source:
+          'https://www.whitehouse.gov/briefings-statements/remarks-president-trump-vice-president-pence-members-coronavirus-task-force-press-briefing-4/',
+      },
+      {
+        text: `Trump falsely claims that the tests the WHO offered to the US are "...a bad test." - WHO had the tests validated by 3 independent labs`,
+        source:
+          'https://www.c-span.org/video/?470426-1/president-trump-urges-states-follow-coronavirus-guidelines&start=4920',
+      },
+    ],
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-03-18'),
+    source: 'https://twitter.com/realDonaldTrump/status/1240243188708839424',
+    content:
+      'I always treated the Chinese Virus very seriously, and have done a very good job from the beginning, including my very early decision to close the “borders” from China - against the wishes of almost all. Many lives were saved. The Fake News new narrative is disgraceful & false!',
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-03-18'),
+    update: [
+      {
+        text: 'US senate reveals a $1 trillion economic stimulus package',
+        source: 'https://www.wsj.com/articles/senate-republicans-prepare-third-coronavirus-measure-11584622892',
+      },
+    ],
   },
   {
     type: 'UPDATE',
@@ -159,74 +227,6 @@ export const trumpEvents = [
         text:
           'Trump falsely claims that "We Inherited a broken test". Despite the fact that the CDC designed, validated, and deployed the test after Trump refused tests from the WHO',
         source: 'https://youtu.be/-iEhLe5G4RU?t=367',
-      },
-    ],
-  },
-  {
-    type: 'TWEET',
-    date: new Date('2020-04-06'),
-    update: [
-      {
-        text: `Grand Princess cruise ship waits to dock off California coast`,
-        source:
-          'https://6abc.com/health/live-coronavirus-updates-grand-princess-cruise-ship-anchors-in-sf-bay/5996768/',
-      },
-      {
-        text: `Trump says: "I would rather because I like the numbers being where they are. I don’t need to have the numbers double because of one ship."`,
-        source:
-          'https://www.washingtonpost.com/politics/2020/03/07/which-is-trump-more-worried-about-coronavirus-numbers-or-coronavirus-patients/',
-      },
-      {
-        text: `Testing is in short supply`,
-        source:
-          'https://www.politifact.com/factchecks/2020/mar/11/donald-trump/donald-trumps-wrong-claim-anybody-can-get-tested-c/',
-      },
-    ],
-    source: 'https://twitter.com/realDonaldTrump/status/1236975196642390022',
-    content:
-      'The Fake News Media and their partner, the Democrat Party, is doing everything within its semi-considerable power (it used to be greater!) to inflame the CoronaVirus situation, far beyond what the facts would warrant. Surgeon General, “The risk is low to the average American.”',
-  },
-  {
-    type: 'UPDATE',
-    date: new Date('2020-04-13'),
-    update: [
-      {
-        text: `Trump declares national emergency`,
-        source:
-          'https://webcache.googleusercontent.com/search?q=cache:WJXrQ5xGXj0J:https://www.whitehouse.gov/briefings-statements/remarks-president-trump-vice-president-pence-members-coronavirus-task-force-press-conference-3/+&cd=1&hl=en&ct=clnk&gl=us',
-      },
-    ],
-  },
-  {
-    type: 'UPDATE',
-    date: new Date('2020-04-17'),
-    update: [
-      {
-        text: `Trump requests a 2 week national quarantine - "we’re asking everyone to work at home, if possible, postpone unnecessary travel, and limit social gatherings to no more than 10 people."`,
-        source:
-          'https://www.whitehouse.gov/briefings-statements/remarks-president-trump-vice-president-pence-members-coronavirus-task-force-press-briefing-4/',
-      },
-      {
-        text: `Trump falsely claims that the tests the WHO offered to the US are "...a bad test." - WHO had the tests validated by 3 independent labs`,
-        source:
-          'https://www.c-span.org/video/?470426-1/president-trump-urges-states-follow-coronavirus-guidelines&start=4920',
-      },
-    ],
-  },
-  {
-    type: 'TWEET',
-    date: new Date('2020-04-18'),
-    source: 'https://twitter.com/realDonaldTrump/status/1240243188708839424',
-    content:
-      'I always treated the Chinese Virus very seriously, and have done a very good job from the beginning, including my very early decision to close the “borders” from China - against the wishes of almost all. Many lives were saved. The Fake News new narrative is disgraceful & false!',
-  },
-  {
-    type: 'UPDATE',
-    date: new Date('2020-04-18'),
-    update: [
-      {
-        text: 'US senate reveals a $1 trillion economic stimulus package',
-        source: 'https://www.wsj.com/articles/senate-republicans-prepare-third-coronavirus-measure-11584622892',
       },
     ],
   },
