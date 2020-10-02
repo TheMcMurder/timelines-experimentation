@@ -14,14 +14,23 @@ export default function NotableEvents(props) {
         <EventsSVG {...props} />
         <div className="bg-gray-100 w-full">
           <div className="m-2 flex">
-            <div className="flex-1 flex-col flex justify-center items-center">
-              {highlightedBidenEvent && <BidenEvent event={highlightedBidenEvent} />}
+            <div className="flex-1 flex-col">
+              <div className="flex justify-center">Biden</div>
+              <div className="flex justify-center items-center">
+                {highlightedBidenEvent && <BidenEvent event={highlightedBidenEvent} />}
+              </div>
             </div>
-            <div className="flex-1 flex-col flex justify-center items-center">
-              {highlightedNeutralEvent && <NeutralEvent event={highlightedNeutralEvent} />}
+            <div className="flex-1 flex-col">
+              <div className="flex justify-center">Events</div>
+              <div className="flex justify-center items-center">
+                {highlightedNeutralEvent && <NeutralEvent event={highlightedNeutralEvent} />}
+              </div>
             </div>
-            <div className="flex-1 flex-col flex justify-center items-center">
-              {highlightedTrumpEvent && <TrumpEvent event={highlightedTrumpEvent} />}
+            <div className="flex-1 flex-col">
+              <div className="flex justify-center">Trump</div>
+              <div className="flex justify-center items-center">
+                {highlightedTrumpEvent && <TrumpEvent event={highlightedTrumpEvent} />}
+              </div>
             </div>
           </div>
         </div>

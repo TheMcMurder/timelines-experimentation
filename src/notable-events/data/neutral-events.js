@@ -51,7 +51,7 @@ export const neutralEvents = [
   },
   {
     type: 'UPDATE',
-    date: new Date('2020-04-03'),
+    date: new Date('2020-03-04'),
     update: [
       {
         text: `House passes $8.3 Billion emergency bill`,
@@ -61,7 +61,7 @@ export const neutralEvents = [
   },
   {
     type: 'UPDATE',
-    date: new Date('2020-04-06'),
+    date: new Date('2020-03-06'),
     update: [
       {
         text: `Grand Princess cruise ship waits to dock off California coast`,
@@ -72,7 +72,7 @@ export const neutralEvents = [
   },
   {
     type: 'UPDATE',
-    date: new Date('2020-04-11'),
+    date: new Date('2020-03-11'),
     update: [
       {
         text: `WHO declares COVID-19 a pandemic`,
@@ -83,7 +83,7 @@ export const neutralEvents = [
   },
   {
     type: 'UPDATE',
-    date: new Date('2020-04-14'),
+    date: new Date('2020-03-14'),
     update: [
       {
         text: `House passes a worker and buisiness relief bill`,
@@ -94,11 +94,16 @@ export const neutralEvents = [
   },
   {
     type: 'UPDATE',
-    date: new Date('2020-04-20'),
+    date: new Date('2020-03-20'),
     update: [
       {
         text: `New York Governor orders all non-essential buisinesses to keep their workers at home`,
         source: 'https://www.nytimes.com/2020/03/20/nyregion/coronavirus-new-york-update.html',
+      },
+      {
+        text: `Many other states issue similar orders`,
+        source:
+          'https://www.usatoday.com/story/news/nation/2020/03/21/coronavirus-lockdown-orders-shelter-place-stay-home-state-list/2891193001/',
       },
     ],
   },

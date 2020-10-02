@@ -129,6 +129,40 @@ export const trumpEvents = [
       'https://www.washingtonpost.com/video/politics/i-dont-take-responsibility-at-all-trump-says-on-lack-of-coronavirus-tests/2020/03/13/bfdbdf63-784c-4392-831e-29010ae3b1ac_video.html?itid=lk_inline_manual_37',
   },
   {
+    type: 'UPDATE',
+    date: new Date('2020-03-27'),
+    update: [
+      {
+        text: `Trump Signs $2.2 Trillion emergency spending bill`,
+        source: `https://www.whitehouse.gov/briefings-statements/remarks-president-trump-signing-h-r-748-cares-act/`,
+      },
+      {
+        text: `Trump falsely claims that the tests the WHO offered to the US are "...a bad test." - WHO had the tests validated by 3 independent labs`,
+        source:
+          'https://www.c-span.org/video/?470426-1/president-trump-urges-states-follow-coronavirus-guidelines&start=4920',
+      },
+    ],
+  },
+  {
+    type: 'QUOTE',
+    date: new Date('2020-03-29'),
+    quote: `Nothing would be worse than declaring victory before the victory is won.  That would be the greatest loss of all.`,
+    source: 'Whitehouse.gov',
+    sourceLink:
+      'https://www.whitehouse.gov/briefings-statements/remarks-president-trump-vice-president-pence-members-coronavirus-task-force-press-briefing-14/',
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-03-30'),
+    update: [
+      {
+        text:
+          'Trump falsely claims that "We Inherited a broken test". Despite the fact that the CDC designed, validated, and deployed the test after Trump refused tests from the WHO',
+        source: 'https://youtu.be/-iEhLe5G4RU?t=367',
+      },
+    ],
+  },
+  {
     type: 'TWEET',
     date: new Date('2020-04-06'),
     update: [
