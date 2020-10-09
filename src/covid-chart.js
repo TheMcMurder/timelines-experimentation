@@ -32,35 +32,37 @@ export default function CovidChart({ margin, width, height }) {
   return (
     <div className="max-w-full max-h-full">
       <Controls />
-      <div className="flex w-full justify-center items-center flex-col">
-        <h1 className="text-xl">{dead.toLocaleString()} Dead Americans from COVID-19</h1>
-        <div>{dataForCurrentDay && dataForCurrentDay.date.toLocaleString()}</div>
-      </div>
-      <svg viewBox={[0, 0, width, height]}>
-        <defs>
-          <linearGradient id="myGradient">
-            <stop offset={`${percentage}%`} stopColor="#8A0707" />
-            <stop offset={`${percentage}%`} stopColor="transparent" />
-          </linearGradient>
-        </defs>
-        <LeftValueAxis scale={yScale} translateX={margin.left} />
-        <BottomTimeAxis
-          scale={xScale}
-          translateY={height - margin.bottom}
+      <div className="max-w-3xl max-h-full" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+        <div className="flex w-full justify-center items-center flex-col">
+          <h1 className="text-xl">{dead.toLocaleString()} Dead Americans from COVID-19</h1>
+          <div>{dataForCurrentDay && dataForCurrentDay.date.toLocaleString()}</div>
+        </div>
+        <svg viewBox={[0, 0, width, height]}>
+          <defs>
+            <linearGradient id="myGradient">
+              <stop offset={`${percentage}%`} stopColor="#8A0707" />
+              <stop offset={`${percentage}%`} stopColor="transparent" />
+            </linearGradient>
+          </defs>
+          <LeftValueAxis scale={yScale} translateX={margin.left} />
+          <BottomTimeAxis
+            scale={xScale}
+            translateY={height - margin.bottom}
+            marginLeft={margin.left}
+            width={width - margin.right}
+          />
+          {true && <CasualtyEventLines dead={dead} releventEvents={releventEvents} xScale={xScale} yScale={yScale} />}
+          <SvgLine points={deathPoints} stroke={'url(#myGradient)'} />
+        </svg>
+        <NotableEvents
+          height={100}
+          currentDay={dataForCurrentDay ? dataForCurrentDay.date : undefined}
+          xScale={xScale}
           marginLeft={margin.left}
-          width={width - margin.right}
+          width={width}
+          marginRight={margin.right}
         />
-        {true && <CasualtyEventLines dead={dead} releventEvents={releventEvents} xScale={xScale} yScale={yScale} />}
-        <SvgLine points={deathPoints} stroke={'url(#myGradient)'} />
-      </svg>
-      <NotableEvents
-        height={100}
-        currentDay={dataForCurrentDay ? dataForCurrentDay.date : undefined}
-        xScale={xScale}
-        marginLeft={margin.left}
-        width={width}
-        marginRight={margin.right}
-      />
+      </div>
     </div>
   )
 }
