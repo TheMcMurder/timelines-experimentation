@@ -32,7 +32,7 @@ export default function CovidChart({ margin, width, height }) {
   return (
     <div className="max-w-full max-h-full">
       <Controls />
-      <div className="max-w-3xl max-h-full" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+      <div className="max-w-4xl max-h-full" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
         <div className="flex w-full justify-center items-center flex-col">
           <h1 className="text-xl">{dead.toLocaleString()} Dead Americans from COVID-19</h1>
           <div>{dataForCurrentDay && dataForCurrentDay.date.toLocaleString()}</div>
