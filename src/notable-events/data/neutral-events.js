@@ -212,16 +212,6 @@ export const neutralEvents = [
   },
   {
     type: 'UPDATE',
-    date: new Date('2020-06-28'),
-    update: [
-      {
-        text: `US travellers banned from Europe as Europe reopens travel`,
-        source: `https://www.forbes.com/sites/tamarathiessen/2020/06/28/europe-travel-us-banned-14-countries-can-visit-eu/#7f9af38f66fd`,
-      },
-    ],
-  },
-  {
-    type: 'UPDATE',
     date: new Date('2020-07-13'),
     update: [
       {
