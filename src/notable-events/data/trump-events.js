@@ -231,6 +231,16 @@ export const trumpEvents = [
   },
   {
     type: 'UPDATE',
+    date: new Date('2020-04-03'),
+    update: [
+      {
+        text: `Trump says he won't wear a mask`,
+        source: `https://www.nytimes.com/video/us/politics/100000007070943/trump-mask-coronavirus.html`,
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
     date: new Date('2020-04-13'),
     update: [
       {
@@ -427,6 +437,16 @@ export const trumpEvents = [
       {
         text: `Trump praises himself for stopping travel from China early`,
         source: 'https://twitter.com/realDonaldTrump/status/1265301249630654467',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-07-11'),
+    update: [
+      {
+        text: `Trump wears a mask in public for the first time`,
+        source: 'https://www.foxnews.com/politics/trump-wears-face-mask-in-public-first-time-coronavirus',
       },
     ],
   },
