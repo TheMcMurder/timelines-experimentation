@@ -130,6 +130,36 @@ export const neutralEvents = [
   },
   {
     type: 'UPDATE',
+    date: new Date('2020-03-26'),
+    update: [
+      {
+        text: `US cases surpass China`,
+        source: `https://www.npr.org/sections/coronavirus-live-updates/2020/03/26/822248693/u-s-surpasses-china-in-cases-of-coronavirus`,
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-03-30'),
+    update: [
+      {
+        text: `Olympics postponed`,
+        source: `https://www.nbcnews.com/news/world/new-dates-announced-tokyo-2020-olympics-postponed-over-coronavirus-concerns-n1171871`,
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-04-02'),
+    update: [
+      {
+        text: `Record 6.6 million Americans file for unemployment in one week`,
+        source: `https://www.nbcnews.com/business/economy/record-6-6-million-americans-filed-unemployment-last-week-n1174776`,
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
     date: new Date('2020-04-09'),
     update: [
       {
@@ -220,4 +250,16 @@ export const neutralEvents = [
       },
     ],
   },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-09-29'),
+    update: [
+      {
+        text: `First presidential debate.`,
+        source: `https://www.youtube.com/watch?v=wW1lY5jFNcQ`,
+      },
+    ],
+  },
 ]
+
+// checkout out this source more: https://www.nbcnews.com/health/health-news/coronavirus-timeline-tracking-critical-moments-covid-19-n1154341

@@ -134,6 +134,12 @@ export const trumpEvents = [
       'https://www.whitehouse.gov/briefings-statements/remarks-president-trump-meeting-republican-senators-2/?utm_source=link&utm_medium=header',
   },
   {
+    type: 'TWEET',
+    date: new Date('2020-03-11'),
+    source: `https://twitter.com/realDonaldTrump/status/1237820230296010752`,
+    content: `I am fully prepared to use the full power of the Federal Government to deal with our current challenge of the CoronaVirus!`,
+  },
+  {
     type: 'QUOTE',
     date: new Date('2020-03-13'),
     quote: `I don't take responsibility at all.`,
@@ -323,6 +329,12 @@ export const trumpEvents = [
     ],
   },
   {
+    type: 'TWEET',
+    date: new Date('2020-04-24'),
+    source: `https://twitter.com/realDonaldTrump/status/1253679654734573570`,
+    content: `Getting VERY good reviews of the job the Federal Government is doing on CoronaVirus. Ventilators, building hospitals, beds and yes, Testing, have been handled incredibly well. Testing is getting exponentially better every day. Love seeing our Country safely opening up!`,
+  },
+  {
     type: 'UPDATE',
     date: new Date('2020-04-29'),
     update: [
@@ -390,6 +402,18 @@ export const trumpEvents = [
     ],
   },
   {
+    type: 'TWEET',
+    date: new Date('2020-05-12'),
+    source: `https://twitter.com/realDonaldTrump/status/1260177007490600960`,
+    content: `Remember this, every Governor who has sky high approval on their handling of the Coronavirus, and I am happy for them all, could in no way have gotten those numbers, or had that success, without me and the Federal Governments help. From Ventilators to Testing, we made it happen!`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-05-17'),
+    source: `https://twitter.com/realDonaldTrump/status/1262020427582451717`,
+    content: `Doing REALLY well, medically, on solving the CoronaVirus situation (Plague!). It will happen!`,
+  },
+  {
     type: 'UPDATE',
     date: new Date('2020-05-18'),
     update: [
@@ -435,10 +459,16 @@ export const trumpEvents = [
     date: new Date('2020-05-26'),
     update: [
       {
-        text: `Trump praises himself for stopping travel from China early`,
+        text: `Trump praises himself for banning most travel from China early`,
         source: 'https://twitter.com/realDonaldTrump/status/1265301249630654467',
       },
     ],
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-07-02'),
+    source: `https://twitter.com/realDonaldTrump/status/1278897430378041344`,
+    content: `There is a rise in Coronavirus cases because our testing is so massive and so good, far bigger and better than any other country. This is great news, but even better news is that death, and the death rate, is DOWN. Also, younger people, who get better much easier and faster!`,
   },
   {
     type: 'UPDATE',
@@ -452,9 +482,49 @@ export const trumpEvents = [
   },
   {
     type: 'TWEET',
+    date: new Date('2020-08-03'),
+    source: `https://twitter.com/realDonaldTrump/status/1290283634130214913`,
+    content: `RECORD HIGH NASDAQ! It would all come crashing down, including your Jobs, Stocks, and 401k’s, if Sleepy Joe ever became President. China and others would own us!!!`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-08-07'),
+    source: `https://twitter.com/realDonaldTrump/status/1291713214066184192`,
+    content: `I called the politicization of the China Virus by the Radical Left Democrats a Hoax, not the China Virus itself. Everybody knows this except for the Fake and very Corrupt Media!`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-08-11'),
+    source: `https://twitter.com/realDonaldTrump/status/1293163704188645385`,
+    content: `More Testing, which is a good thing (we have the most in the world), equals more Cases, which is Fake News Gold. They use Cases to demean the incredible job being done by the great men & women of the U.S. fighting the China Plague!`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-09-03'),
+    source: `https://twitter.com/realDonaldTrump/status/1301499699069882368`,
+    content: `Governors Andrew Cuomo of New York has the worst record on death and China Virus. 11,000 people alone died in Nursing Homes because of his incompetence!`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-09-07'),
+    source: `https://twitter.com/realDonaldTrump/status/1302961482716639233`,
+    content: `Starting to get VERY high marks in our handling of the Coronavirus (China Virus), especially when compared to other countries and areas of the world. Now the Vaccines (Plus) are coming, and fast!`,
+  },
+  {
+    type: 'TWEET',
     date: new Date('2020-10-01'),
     source: `https://twitter.com/realDonaldTrump/status/1311892190680014849`,
     content: `Tonight, @FLOTUS and I tested positive for COVID-19. We will begin our quarantine and recovery process immediately. We will get through this TOGETHER!`,
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-10-06'),
+    update: [
+      {
+        text: `Trump's tweet about the flu and COVID breaks twitter rules. Spreading misinformation.`,
+        source: `https://twitter.com/realDonaldTrump/status/1313449844413992961`,
+      },
+    ],
   },
 ]
 
