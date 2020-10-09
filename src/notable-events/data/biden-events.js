@@ -45,6 +45,12 @@ export const bidenEvents = [
     ],
   },
   {
+    type: 'TWEET',
+    date: new Date('2020-03-14'),
+    source: 'https://twitter.com/JoeBiden/status/1238957075637497856',
+    content: `The coronavirus will not discriminate based on national origin, race, gender, or zip code. It will touch people in positions of power and the most vulnerable in our society. We need to take action to combat it.`,
+  },
+  {
     type: 'QUOTE',
     date: new Date('2020-03-15'),
     update: [
@@ -68,6 +74,18 @@ export const bidenEvents = [
           'https://medium.com/@JoeBiden/statement-from-vice-president-joe-biden-on-immediate-actions-the-trump-administration-must-take-to-57857de533b8',
       },
     ],
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-03-21'),
+    source: 'https://twitter.com/JoeBiden/status/1241406213864280064',
+    content: `The coronavirus test should be made widely available and free. The coronavirus vaccine, when ready, should be made widely available and free. Treatment for coronavirus should be free, too. We're in a crisis. No one should have to pay for their coronavirus health care costs.`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-03-26'),
+    source: `https://twitter.com/JoeBiden/status/1243329134341783564`,
+    content: `President Trump is not responsible for the coronavirus, but he bears full responsibility for the slow and uncoordinated response. The harsh reality is that at least 3 million people now don’t have jobs because he didn’t do his job when it mattered.`,
   },
   {
     type: 'UPDATE',
@@ -119,6 +137,12 @@ export const bidenEvents = [
         source: `https://www.nytimes.com/2020/04/12/opinion/joe-biden-coronavirus-reopen-america.html`,
       },
     ],
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-04-04'),
+    source: 'https://twitter.com/JoeBiden/status/1246524690668998656',
+    content: `Donald Trump is not responsible for the coronavirus, but he is responsible for failing to prepare our nation to respond to it.`,
   },
   {
     type: 'UPDATE',
@@ -173,6 +197,13 @@ export const bidenEvents = [
     ],
   },
   {
+    type: 'TWEET',
+    date: new Date('2020-05-13'),
+    source: 'https://twitter.com/JoeBiden/status/1260751685959417858',
+    content:
+      '“60 days into the coronavirus crisis, the White House does not have a plan, a framework, a philosophy, or a goal.” Real presidents lead. Reality TV presidents don’t.',
+  },
+  {
     type: 'UPDATE',
     date: new Date('2020-05-20'),
     update: [
@@ -213,6 +244,25 @@ export const bidenEvents = [
     ],
   },
   {
+    type: 'TWEET',
+    date: new Date('2020-06-19'),
+    source: 'https://twitter.com/JoeBiden/status/1274115997029421056',
+    content:
+      'Donald Trump’s failure to fight the coronavirus with the same energy and focus that he uses to troll his enemies on Twitter has cost us lives — and is putting hope for an economic recovery at risk.',
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-06-22'),
+    source: `https://twitter.com/JoeBiden/status/1275233359615180800`,
+    content: `It's worth repeating that this weekend, President Trump admitted he directed his administration to slow down coronavirus testing in the middle of a global pandemic. He continues to prove just how unfit he is to lead our nation.`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-06-27'),
+    source: `https://twitter.com/JoeBiden/status/1276896820547985409`,
+    content: `If Donald Trump prevails in the U.S. Supreme Court, insurers could strip away your health insurance coverage or jack up premiums — simply because you experience long-term effects after battling the coronavirus. We can't let that happen.`,
+  },
+  {
     type: 'UPDATE',
     date: new Date('2020-06-30'),
     update: [
@@ -233,6 +283,12 @@ export const bidenEvents = [
     ],
   },
   {
+    type: 'TWEET',
+    date: new Date('2020-07-08'),
+    source: `https://twitter.com/JoeBiden/status/1280998849730039810`,
+    content: `Increased testing isn’t the reason for the surge in coronavirus cases — Donald Trump's failed leadership is.`,
+  },
+  {
     type: 'UPDATE',
     date: new Date('2020-07-17'),
     update: [
@@ -243,6 +299,13 @@ export const bidenEvents = [
     ],
   },
   {
+    type: 'TWEET',
+    date: new Date('2020-07-25'),
+    source: 'https://twitter.com/JoeBiden/status/1287070108465139713',
+    content:
+      'President Trump ordered his administration to slow down coronavirus testing, he tried to block CDC funding, and he has ignored the experts from day one. His actions defy both logic and humanity. What kind of president actively undercuts efforts that will save lives?',
+  },
+  {
     type: 'UPDATE',
     date: new Date('2020-07-27'),
     update: [
@@ -251,6 +314,19 @@ export const bidenEvents = [
         source: 'https://medium.com/@JoeBiden/my-statement-on-vaccines-2133deed94ee',
       },
     ],
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-08-04'),
+    source: 'https://twitter.com/JoeBiden/status/1290610936022171655',
+    content: `On July 1st, Donald Trump predicted the coronavirus was going to "just disappear." He was wrong — and more than 25,000 Americans died due to the virus last month. Mr. President, step up and do your job before even more American families feel the pain of losing a loved one.`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-08-08'),
+    source: 'https://twitter.com/JoeBiden/status/1292207707894685696',
+    content:
+      'Between the coronavirus and the economic crisis, this is a tough time for our country, I know. But I firmly believe that our best days still lie ahead. Together, we will climb out of these crises and emerge stronger than before.',
   },
   {
     type: 'UPDATE',
@@ -282,6 +358,36 @@ export const bidenEvents = [
           'https://joebiden.com/2020/09/08/statement-by-joe-biden-and-kamala-harris-on-ensuring-a-safe-and-effective-covid-19-vaccine/',
       },
     ],
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-09-29'),
+    source: 'https://twitter.com/JoeBiden/status/1311117559589220355',
+    content: `When I hear 200,000 deaths, I think of the empty chairs at dining room tables all across the country, which just months ago were filled by loved ones. It didn’t have to be this bad.`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-09-29'),
+    source: 'https://twitter.com/JoeBiden/status/1311137440334192640',
+    content: `You heard a lot come out of President Trump’s mouth. Can you name one thing he said to actually make your life better?`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-10-06'),
+    source: `https://twitter.com/JoeBiden/status/1313582048691458048`,
+    content: `The pandemic is not a red state versus blue state issue. The virus doesn’t care where you live or what political party you belong to. It infects us all. It will take anyone’s life. It is a virus — not a political weapon.`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-10-06'),
+    source: `https://twitter.com/JoeBiden/status/1313580790530351105`,
+    content: `As president, I will send a clear, unequivocal message to the entire nation: There is no place for hate in America. It will be given no license. It will be given no oxygen. It will be given no safe harbor.`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-10-09'),
+    source: `https://twitter.com/JoeBiden/status/1314658139715915777`,
+    content: `It’s estimated that nearly another 200,000 Americans could lose their lives by the end of the year because of this virus. Enough. No more. Let’s set the partisanship aside. Let’s end the politics. Let’s follow the science.`,
   },
 ]
 
