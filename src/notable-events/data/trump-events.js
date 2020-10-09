@@ -221,6 +221,46 @@ export const trumpEvents = [
   },
   {
     type: 'UPDATE',
+    date: new Date('2020-04-02'),
+    update: [
+      {
+        text: `Trump expands useage of Defense Production Act`,
+        source: 'https://www.politico.com/news/2020/04/02/trump-expands-dpa-order-162128',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-04-13'),
+    update: [
+      {
+        text: `Trump claims legal right to overrule governor lockdowns`,
+        source: 'https://twitter.com/atrupar/status/1249834213899206659',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-04-13'),
+    update: [
+      {
+        text: `Trump claims total authority`,
+        source: 'https://twitter.com/atrupar/status/1249834932513505280',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-04-14'),
+    update: [
+      {
+        text: `Trump announces plans to halt funding to the World Health Organization.`,
+        source: 'https://www.politico.com/news/2020/04/14/trump-world-health-organization-funding-186786',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
     date: new Date('2020-04-16'),
     update: [
       {
@@ -231,11 +271,162 @@ export const trumpEvents = [
   },
   {
     type: 'UPDATE',
+    date: new Date('2020-04-17'),
+    update: [
+      {
+        text: `Trump tweets to "liberate" states, but only does so to states with democratic governors`,
+        source: 'https://twitter.com/realdonaldtrump/status/1251168994066944003',
+      },
+    ],
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-04-17'),
+    source: 'https://twitter.com/realdonaldtrump/status/1251168994066944003',
+    content: `LIBERATE MINNESOTA!`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-04-17'),
+    source: 'https://twitter.com/realdonaldtrump/status/1251169987110330372',
+    content: `LIBERATE VIRGINIA, and save your great 2nd Amendment. It is under siege!`,
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-04-22'),
+    update: [
+      {
+        text: `Trump claims it's too soon to re-open.`,
+        source:
+          'https://www.ajc.com/blog/politics/too-soon-trump-urges-kemp-reverse-coronavirus-rollback/bUQsnksgvm8vmrTQonrNtK/',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
     date: new Date('2020-04-23'),
     update: [
       {
-        text: `Trump suggests getting disinfectant and light inside the body.`,
+        text: `Trump suggests treating Coronavirus by getting disinfectant and light inside the body.`,
         source: 'https://www.youtube.com/watch?v=zicGxU5MfwE&feature=emb_title',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-04-29'),
+    update: [
+      {
+        text: `Trump administration allows federal lockdown order to end.`,
+        source: 'https://www.politico.com/news/2020/04/29/end-of-social-distancing-rules-coronavirus-223505',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-05-03'),
+    update: [
+      {
+        text: `Trump revises his death estimate to 75-100k.`,
+        source: 'https://www.whitehouse.gov/briefings-statements/remarks-president-trump-fox-news-virtual-town-hall/',
+      },
+    ],
+  },
+  {
+    type: 'QUOTE',
+    date: new Date('2020-05-08'),
+    quote: `All of them, not everyone would want to admit it, but they all view us as the world leader, and they're following us`,
+    source: 'FOX',
+    sourceLink: `https://twitter.com/atrupar/status/1258810288117297153`,
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-05-09'),
+    update: [
+      {
+        text: `Although many states have yet to meet the minimum requirements for reopening based on the White House’s guidelines, Trump continues to push for the reopening of nonessential businesses, using the slogan “TRANSITION TO GREATNESS!”`,
+        source: 'https://twitter.com/realDonaldTrump/status/1259153410756153350',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-05-09'),
+    update: [
+      {
+        text: `Although many states have yet to meet the minimum requirements for reopening based on the White House’s guidelines, Trump continues to push for the reopening of nonessential businesses, using the slogan “TRANSITION TO GREATNESS!”`,
+        source: 'https://twitter.com/realDonaldTrump/status/1259153410756153350',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-05-10'),
+    update: [
+      {
+        text: `Trump attacks Obama H1N1 response`,
+        source: 'https://twitter.com/realDonaldTrump/status/1259450328048709633',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-05-11'),
+    update: [
+      {
+        text: `Trump claims that "We have met the moment and prevailed"`,
+        source: 'https://twitter.com/AmerIndependent/status/1259943211243634694',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-05-18'),
+    update: [
+      {
+        text: `Trump claims that "We have met the moment and prevailed"`,
+        source: 'https://twitter.com/AmerIndependent/status/1259943211243634694',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-05-21'),
+    update: [
+      {
+        text: `Trump claims "I was so early. I was earlier than anybody thought." in response to study`,
+        source:
+          'https://thehill.com/homenews/administration/498985-trump-calls-columbia-study-showing-effects-of-earlier-coronavirus',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-05-23'),
+    update: [
+      {
+        text: `Trump goes golfing as US deaths near 100k`,
+        source: 'https://www.cnn.com/2020/05/23/politics/trump-golf-course-sterling-virginia/index.html',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-05-23'),
+    update: [
+      {
+        text: `Trump bans non-US citizens traveling from Brazil from entering the country`,
+        source: 'https://thehill.com/homenews/administration/499399-trump-imposes-travel-restrictions-on-brazil',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-05-26'),
+    update: [
+      {
+        text: `Trump praises himself for stopping travel from China early`,
+        source: 'https://twitter.com/realDonaldTrump/status/1265301249630654467',
       },
     ],
   },

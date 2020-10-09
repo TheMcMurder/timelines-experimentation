@@ -148,4 +148,46 @@ export const neutralEvents = [
       },
     ],
   },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-04-17'),
+    update: [
+      {
+        text: `Small groups of protestors (sometimes armed), begin protesting lockdown orders`,
+        source:
+          'https://abcnews.go.com/US/convoy-protesting-stay-home-orders-targets-michigans-capital/story?id=70138816',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-05-09'),
+    update: [
+      {
+        text: `News breaks that Trump administration refused an offer by company to manufactor millions of N95 masks in Jan.`,
+        source:
+          'https://www.washingtonpost.com/investigations/in-the-early-days-of-the-pandemic-the-us-government-turned-down-an-offer-to-manufacture-millions-of-n95-masks-in-america/2020/05/09/f76a821e-908a-11ea-a9c0-73b93422d691_story.html',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-05-10'),
+    update: [
+      {
+        text: `Media fact-checks Trumps claims of H1N1 response being "A disaster"`,
+        source: `https://www.washingtonpost.com/politics/2020/04/21/trumps-bizarre-effort-tag-obamas-swine-flu-response-disaster/`,
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-05-21'),
+    update: [
+      {
+        text: `Columbia University Models released. Claims 36,000 americans could have been saved by locking down earlier`,
+        source: 'https://www.nytimes.com/2020/05/20/us/coronavirus-distancing-deaths.html',
+      },
+    ],
+  },
 ]
