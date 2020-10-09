@@ -430,6 +430,12 @@ export const trumpEvents = [
       },
     ],
   },
+  {
+    type: 'TWEET',
+    date: new Date('2020-10-01'),
+    source: `https://twitter.com/realDonaldTrump/status/1311892190680014849`,
+    content: `Tonight, @FLOTUS and I tested positive for COVID-19. We will begin our quarantine and recovery process immediately. We will get through this TOGETHER!`,
+  },
 ]
 
 // pretty good starting point for trump https://www.poynter.org/fact-checking/2020/we-have-it-totally-under-control-a-timeline-of-president-donald-trumps-response-to-the-coronavirus-pandemic/
