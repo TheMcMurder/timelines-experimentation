@@ -175,7 +175,16 @@ export const trumpEvents = [
     content:
       'I always treated the Chinese Virus very seriously, and have done a very good job from the beginning, including my very early decision to close the “borders” from China - against the wishes of almost all. Many lives were saved. The Fake News new narrative is disgraceful & false!',
   },
-
+  {
+    type: 'UPDATE',
+    date: new Date('2020-03-18'),
+    update: [
+      {
+        text: `Trump partially invokes defense production act. Stopping short of mandating production`,
+        source: 'https://www.cnn.com/2020/03/18/politics/trump-defense-production-act-coronavirus/index.html',
+      },
+    ],
+  },
   {
     type: 'UPDATE',
     date: new Date('2020-03-27'),

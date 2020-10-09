@@ -130,6 +130,16 @@ export const neutralEvents = [
   },
   {
     type: 'UPDATE',
+    date: new Date('2020-04-09'),
+    update: [
+      {
+        text: 'Media calls for full invokation of Defense Production Act',
+        source: 'https://www.politico.com/news/agenda/2020/04/09/trump-defense-production-act-175920',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
     date: new Date('2020-04-11'),
     update: [
       {
