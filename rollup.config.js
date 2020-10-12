@@ -22,7 +22,7 @@ export default {
   },
   plugins: [
     copy({
-      targets: [{ src: 'public/index.html', dest: outputPath }],
+      targets: [{ src: 'src/index.html', dest: outputPath }],
     }),
     nodeResolve({
       browser: true,
