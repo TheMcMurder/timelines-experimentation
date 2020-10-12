@@ -290,6 +290,16 @@ export const neutralEvents = [
       },
     ],
   },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-10-05'),
+    update: [
+      {
+        text: `Trump leaves Hospital.`,
+        source: `https://www.npr.org/sections/latest-updates-trump-covid-19-results/2020/10/05/920412187/trump-says-he-will-leave-walter-reed-medical-center-monday-night`,
+      },
+    ],
+  },
 ]
 
 // checkout out this source more: https://www.nbcnews.com/health/health-news/coronavirus-timeline-tracking-critical-moments-covid-19-n1154341
