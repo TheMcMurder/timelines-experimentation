@@ -373,6 +373,52 @@ export const bidenEvents = [
   },
   {
     type: 'TWEET',
+    date: new Date('2020-09-30'),
+    source: `https://twitter.com/JoeBiden/status/1311433140078964736`,
+    content: `White supremacy has no place in America.
+
+    We shouldn’t have to beg the President of the United States to say that.`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-10-01'),
+    source: `https://twitter.com/JoeBiden/status/1311828242517680135`,
+    content: `Donald Trump will do everything he can to distract from the fact that because of his failed COVID-19 response:
+
+    - Over 200,000 Americans have died
+    - 26 million are on unemployment
+    - 1 in 6 small businesses risk permanent closure
+    
+    We can’t let him.`,
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-10-02'),
+    source: `https://twitter.com/JoeBiden/status/1312010736604979201`,
+    content: `Jill and I send our thoughts to President Trump and First Lady Melania Trump for a swift recovery. We will continue to pray for the health and safety of the president and his family.`,
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-10-02'),
+    update: [
+      {
+        text: `Biden takes down negative attack ads in response to the presidents diagnosis of COVID-19.`,
+        source: `https://thehill.com/homenews/campaign/519424-biden-camp-taking-down-all-negative-ads`,
+      },
+    ],
+  },
+  {
+    type: 'TWEET',
+    date: new Date('2020-10-02'),
+    source: `https://twitter.com/JoeBiden/status/1312149358356303873`,
+    content: `This cannot be a partisan moment.
+
+    It must be an American moment.
+    
+    We have to come together as a nation.`,
+  },
+  {
+    type: 'TWEET',
     date: new Date('2020-10-06'),
     source: `https://twitter.com/JoeBiden/status/1313582048691458048`,
     content: `The pandemic is not a red state versus blue state issue. The virus doesn’t care where you live or what political party you belong to. It infects us all. It will take anyone’s life. It is a virus — not a political weapon.`,
