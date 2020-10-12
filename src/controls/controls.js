@@ -1,13 +1,57 @@
-import React from 'react'
-import { start, pause } from './time-stream.js'
+import React, { useState } from 'react'
+import { start, pause, changeSpeed } from './time-stream.js'
+
+const selectionMap = {
+  Slow: 2000,
+  Normal: 700,
+  Fast: 100,
+}
 
 export default function TimeControls() {
   return (
-    <div className="bg-gray-400 absolute p-4 flex w-48 justify-between">
-      <Button onClick={start}>Play</Button>
-      <Button onClick={pause} secondary={true}>
-        Pause
-      </Button>
+    <div className="bg-gray-400 absolute p-4 w-48">
+      <div>Playback</div>
+      <div className="w-100 flex justify-between">
+        <Button onClick={start}>Play</Button>
+        <Button onClick={pause} secondary={true}>
+          Pause
+        </Button>
+      </div>
+      <div className="pt-4">
+        <div>Playback speed</div>
+        <RadioButtons
+          initialSelected={'Normal'}
+          options={['Slow', 'Normal', 'Fast']}
+          onChange={(option) => {
+            const selection = selectionMap[option] || selectionMap['Normal']
+            changeSpeed(selection)
+          }}
+        />
+      </div>
+    </div>
+  )
+}
+
+function RadioButtons({ options = [], onChange, initialSelected }) {
+  const [selected, setSelected] = useState(initialSelected)
+  return (
+    <div className="flex justify-between">
+      {options.map((option) => {
+        return (
+          <button
+            key={option}
+            className={`rounded-lg px-2 py-1 text-white leading-tight shadow-md ${
+              selected === option ? 'bg-blue-400' : 'bg-gray-700 hover_bg-gray-900'
+            }`}
+            onClick={() => {
+              setSelected(option)
+              onChange(option)
+            }}
+          >
+            {option}
+          </button>
+        )
+      })}
     </div>
   )
 }

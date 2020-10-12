@@ -6,6 +6,7 @@ const msInADay = 86400000
 const __time$ = new Subject()
 const _timeState$ = new ReplaySubject(1)
 export const timeState$ = _timeState$.asObservable()
+export let currentSpeed = 700
 
 const _time$ = __time$.asObservable().pipe(
   startWith({
@@ -13,7 +14,7 @@ const _time$ = __time$.asObservable().pipe(
     lastDay: null,
     playing: false,
     initialized: false,
-    speed: 100,
+    speed: currentSpeed,
   }),
   scan(reducer, {}),
   tap((state) => {
@@ -59,6 +60,10 @@ export function initializeTime(startingDate, endingDate) {
   __time$.next({ type: 'initialize', payload: { startingDate, endingDate } })
 }
 
+export function changeSpeed(newSpeed) {
+  __time$.next({ type: 'speed_change', payload: { speed: newSpeed } })
+}
+
 export function start() {
   __time$.next({ type: 'start' })
 }
@@ -81,6 +86,11 @@ function reducer(acc, current, index) {
     return {
       ...acc,
       playing: false,
+    }
+  } else if (current.type === 'speed_change') {
+    return {
+      ...acc,
+      speed: current.payload.speed,
     }
   }
   // listeners only available when initialized
