@@ -29,12 +29,16 @@ export default function Disclaimer(props) {
                   <div className="mt-2">
                     <p className="text-sm leading-5 text-gray pb-2">
                       Data around deaths for COVID-19 varies slightly by source. For this project I chose to utilize
-                      https://covidtracking.com/ because it seems to be the most accurate and is used by other
-                      organizations.
+                      <a className="text-blue-600 underline" href="https://covidtracking.com">
+                        {' '}
+                        covidtracking.com
+                      </a>{' '}
+                      because it seems to be the most accurate and is used by other organizations.
                     </p>
                     <p className="text-sm leading-5 text-gray pb-2">
                       Because of small differences in reporting between sources, some claims about number of deaths will
-                      be higher or lower than what covidtracking.
+                      be reported slightly higher or lower than what covidtracking is showing. CovidTracking is also
+                      usually a few days behind other sources.
                     </p>
                     <p className="text-sm leading-5 text-gray pb-2">
                       Unfortanately not every state counts deaths the same way, and covid-19 is still such a new disease
