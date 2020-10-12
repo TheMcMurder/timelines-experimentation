@@ -280,6 +280,16 @@ export const neutralEvents = [
       },
     ],
   },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-10-02'),
+    update: [
+      {
+        text: `Trump taken to Hospital for COVID-19 treatment.`,
+        source: `https://www.usatoday.com/story/news/politics/elections/2020/10/02/trump-covid-19-updates-president-melania-trump-hicks-test-positive/3549616001/`,
+      },
+    ],
+  },
 ]
 
 // checkout out this source more: https://www.nbcnews.com/health/health-news/coronavirus-timeline-tracking-critical-moments-covid-19-n1154341
