@@ -22,6 +22,16 @@ export const neutralEvents = [
   },
   {
     type: 'UPDATE',
+    date: new Date('2020-02-06'),
+    update: [
+      {
+        text: `CDC ships first testing kits - later revealed to be inaccurate`,
+        source: `https://www.forbes.com/sites/rachelsandler/2020/03/02/how-the-cdc-botched-its-initial-coronavirus-response-with-faulty-tests/#437690f1670e`,
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
     date: new Date('2020-02-11'),
     update: [
       {
@@ -57,6 +67,16 @@ export const neutralEvents = [
         text: 'FDA eases guidelines to encourage more testing',
         source:
           'https://www.whitehouse.gov/briefings-statements/statement-press-secretary-regarding-presidents-coronavirus-task-force/',
+      },
+    ],
+  },
+  {
+    type: 'UPDATE',
+    date: new Date('2020-03-02'),
+    update: [
+      {
+        text: `Pharmaceutical companies being developing vaccine`,
+        source: `https://www.cnbc.com/2020/04/13/coronavirus-trump-plays-campaign-style-video-in-white-house-briefing.html`,
       },
     ],
   },

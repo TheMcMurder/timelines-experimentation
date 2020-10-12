@@ -12,7 +12,8 @@ export default function NotableEvents(props) {
     return (
       <div>
         <EventsSVG {...props} />
-        <div className="bg-gray-100 w-full">
+        <div className="bg-gray-100 w-full" style={{ minHeight: '32rem' }}>
+          <div className="text-center">How are the presidential candidates responding?</div>
           <div className="m-2 flex">
             <div className="flex-1 flex-col">
               <div className="flex justify-center">Biden</div>

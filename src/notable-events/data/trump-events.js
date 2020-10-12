@@ -134,6 +134,16 @@ export const trumpEvents = [
       'https://www.whitehouse.gov/briefings-statements/remarks-president-trump-meeting-republican-senators-2/?utm_source=link&utm_medium=header',
   },
   {
+    type: 'UPDATE',
+    date: new Date('2020-03-11'),
+    update: [
+      {
+        text: `Trump suspends travel from Europe`,
+        source: `https://www.cnbc.com/2020/04/13/coronavirus-trump-plays-campaign-style-video-in-white-house-briefing.html`,
+      },
+    ],
+  },
+  {
     type: 'TWEET',
     date: new Date('2020-03-11'),
     source: `https://twitter.com/realDonaldTrump/status/1237820230296010752`,
