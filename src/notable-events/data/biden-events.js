@@ -381,18 +381,6 @@ export const bidenEvents = [
   },
   {
     type: 'TWEET',
-    date: new Date('2020-10-01'),
-    source: `https://twitter.com/JoeBiden/status/1311828242517680135`,
-    content: `Donald Trump will do everything he can to distract from the fact that because of his failed COVID-19 response:
-
-    - Over 200,000 Americans have died
-    - 26 million are on unemployment
-    - 1 in 6 small businesses risk permanent closure
-    
-    We can’t let him.`,
-  },
-  {
-    type: 'TWEET',
     date: new Date('2020-10-02'),
     source: `https://twitter.com/JoeBiden/status/1312010736604979201`,
     content: `Jill and I send our thoughts to President Trump and First Lady Melania Trump for a swift recovery. We will continue to pray for the health and safety of the president and his family.`,
