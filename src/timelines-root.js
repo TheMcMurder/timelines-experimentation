@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react'
 import CSS from './timelines-root.css'
 import CovidChart from './covid-chart.js'
 import Accreditation from './accreditation/accreditation.js'
+import Disclaimer from './disclaimer/disclaimer.js'
 
 const height = 300
 const width = 700
@@ -16,6 +17,7 @@ const margin = {
 export default function TimelinesRootComponent() {
   return (
     <div>
+      <Disclaimer />
       <CovidChart height={height} width={width} margin={margin} />
       <Accreditation />
     </div>
