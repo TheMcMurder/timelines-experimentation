@@ -383,16 +383,6 @@ export const trumpEvents = [
   },
   {
     type: 'UPDATE',
-    date: new Date('2020-05-09'),
-    update: [
-      {
-        text: `Although many states have yet to meet the minimum requirements for reopening based on the White House’s guidelines, Trump continues to push for the reopening of nonessential businesses, using the slogan “TRANSITION TO GREATNESS!”`,
-        source: 'https://twitter.com/realDonaldTrump/status/1259153410756153350',
-      },
-    ],
-  },
-  {
-    type: 'UPDATE',
     date: new Date('2020-05-10'),
     update: [
       {
