@@ -2,7 +2,7 @@ module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
   },
-  purge: ['./public/index.html', './src/**/*.js'],
+  purge: ['./src/index.html', './src/**/*.js'],
   theme: {
     fontFamily: {
       header: ['Open Sans', 'sans-serif'],
