@@ -9,7 +9,7 @@ const selectionMap = {
 
 export default function TimeControls() {
   return (
-    <div className="bg-gray-400 absolute p-4 w-48">
+    <div className="bg-red-100 md:bg-gray-400 md:absolute p-4 md:w-48">
       <div>Playback</div>
       <div className="w-100 flex justify-between">
         <Button onClick={start}>Play</Button>
