@@ -1,4 +1,5 @@
 import React from 'react'
+import ExLink from '../external-link.js'
 
 export function TrumpEvent({ event }) {
   return <Event person="TRUMP" event={event} />
@@ -31,7 +32,8 @@ function EventUpdate({ event }) {
         {event.update.map((update) => {
           return (
             <div key={update} className="font-bold">
-              <a href={update.source}>{update.text}</a>
+              <div>{update.text}</div>
+              <ExLink href={update.source}>source</ExLink>
             </div>
           )
         })}
@@ -46,7 +48,7 @@ function QuoteEvent({ event }) {
   return (
     <div>
       {event.quote && <div>"{event.quote}"</div>}
-      <a href={event.sourceLink}>{event.source}</a>
+      <ExLink href={event.sourceLink}>{event.source}</ExLink>
     </div>
   )
 }
@@ -57,7 +59,7 @@ function TweetEvent({ event }) {
       <div className="text-lg">
         <q>{event.content}</q>
       </div>
-      <a href={event.source}>View on Twitter</a>
+      <ExLink href={event.source}>View on Twitter</ExLink>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
-import { useSeenDisclaimer } from '../persistent/persistent'
+import { useSeenDisclaimer } from '../persistent/persistent.js'
+import ELink from '../external-link.js'
 
 export default function Disclaimer(props) {
   const [seen, markAsSeen] = useSeenDisclaimer()
@@ -85,12 +86,4 @@ export default function Disclaimer(props) {
       </div>
     )
   }
-}
-
-function ELink({ href, children }) {
-  return (
-    <a target="_blank" rel="noopener noreferrer" className="text-blue-600 underline" href={href}>
-      {children}
-    </a>
-  )
 }
