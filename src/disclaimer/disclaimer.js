@@ -1,7 +1,17 @@
-import React from 'react'
+import { doc } from 'prettier'
+import React, { useEffect } from 'react'
 import ELink from '../external-link.js'
 
 export default function Disclaimer({ seen, markAsSeen }) {
+  useEffect(() => {
+    function escListener(evt) {
+      if (evt.key === 'Escape' || evt.keycode === '27') {
+        markAsSeen()
+      }
+    }
+    document.addEventListener('keydown', escListener)
+    return () => document.removeEventListener('keydown', escListener)
+  }, [])
   if (seen) {
     return null
   } else {

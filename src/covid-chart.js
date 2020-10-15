@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react'
+import CovideChartHeader from './covid-chart-header.js'
 import { useLiveData$ } from './data-stream/data-stream.js'
 import { useGetLinearScaleFn, useGetUtcScaleFn } from './line-chart/scales.js'
 import BottomTimeAxis from './line-chart/bottom-time-axis/bottom-time-axis.js'
@@ -32,14 +33,8 @@ export default function CovidChart({ margin, width, height, markAsSeen }) {
   return (
     <div className="max-w-full max-h-full">
       <Controls />
+      <CovideChartHeader dead={dead} dataForCurrentDay={dataForCurrentDay} markAsSeen={markAsSeen} />
       <div className="max-w-4xl max-h-full" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-        <div className="flex w-full justify-center items-center flex-col">
-          <div className="flex w-full items-center justify-center">
-            <h1 className="text-xl">{dead.toLocaleString()} Dead Americans from COVID-19</h1>
-            <button onClick={() => markAsSeen(false)}>*</button>
-          </div>
-          <div>{dataForCurrentDay && dataForCurrentDay.date.toLocaleString()}</div>
-        </div>
         <svg viewBox={[0, 0, width, height]}>
           <defs>
             <linearGradient id="myGradient">
