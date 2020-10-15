@@ -41,15 +41,29 @@ export default function Disclaimer(props) {
                       Unfortanately not every state counts deaths the same way, and covid-19 is still such a new disease
                       with lots of unknowns so{' '}
                       <ELink href="https://www.theguardian.com/world/2020/apr/09/coronavirus-conspiracy-theory-death-overcount-anthony-fauci">
-                        most{' '}
+                        most
                       </ELink>{' '}
                       <ELink href="https://www.cnn.com/2020/04/06/health/us-coronavirus-death-count-cdc-explainer/index.html">
-                        experts{' '}
+                        experts
                       </ELink>{' '}
                       <ELink href="https://www.bloomberg.com/opinion/articles/2020-09-21/200-000-coronavirus-deaths-is-an-undercount">
                         agree
                       </ELink>{' '}
-                      that we are <i>undercounting</i> actual deaths.
+                      <ELink href="https://www.reuters.com/article/us-health-coronavirus-usa-deaths-idUSKBN2426GZ">
+                        that
+                      </ELink>{' '}
+                      <ELink href="https://www.nytimes.com/2020/04/05/us/coronavirus-deaths-undercount.html">we</ELink>{' '}
+                      <ELink href="https://www.npr.org/sections/goatsandsoda/2020/05/13/854873605/fauci-says-u-s-death-toll-is-likely-higher-other-covid-stats-need-adjusting-too">
+                        are
+                      </ELink>{' '}
+                      <ELink href="https://www.nytimes.com/2020/05/22/us/politics/coronavirus-trump-death-toll.html">
+                        <i>undercounting</i>
+                      </ELink>{' '}
+                      <ELink href="https://www.cdc.gov/nchs/nvss/vsrr/covid19/excess_deaths.htm">actual</ELink>{' '}
+                      <ELink href="https://www.nytimes.com/interactive/2020/06/19/us/us-coronavirus-covid-death-toll.html">
+                        deaths
+                      </ELink>
+                      .
                     </p>
                   </div>
                 </div>
