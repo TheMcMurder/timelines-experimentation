@@ -3,6 +3,7 @@ import CSS from './timelines-root.css'
 import CovidChart from './covid-chart.js'
 import Accreditation from './accreditation/accreditation.js'
 import Disclaimer from './disclaimer/disclaimer.js'
+import { useSeenDisclaimer } from './persistent/persistent.js'
 
 const height = 300
 const width = 700
@@ -15,10 +16,11 @@ const margin = {
 }
 
 export default function TimelinesRootComponent() {
+  const [seen, markAsSeen] = useSeenDisclaimer()
   return (
     <div>
-      <Disclaimer />
-      <CovidChart height={height} width={width} margin={margin} />
+      <Disclaimer seen={seen} markAsSeen={markAsSeen} />
+      <CovidChart height={height} width={width} margin={margin} markAsSeen={markAsSeen} />
       <Accreditation />
     </div>
   )

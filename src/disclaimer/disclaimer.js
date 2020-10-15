@@ -1,9 +1,7 @@
 import React from 'react'
-import { useSeenDisclaimer } from '../persistent/persistent.js'
 import ELink from '../external-link.js'
 
-export default function Disclaimer(props) {
-  const [seen, markAsSeen] = useSeenDisclaimer()
+export default function Disclaimer({ seen, markAsSeen }) {
   if (seen) {
     return null
   } else {
