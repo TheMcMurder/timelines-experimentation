@@ -43,12 +43,12 @@ export default function Disclaimer(props) {
                       <ELink href="https://www.theguardian.com/world/2020/apr/09/coronavirus-conspiracy-theory-death-overcount-anthony-fauci">
                         most{' '}
                       </ELink>{' '}
-                      <a href="https://www.cnn.com/2020/04/06/health/us-coronavirus-death-count-cdc-explainer/index.html">
+                      <ELink href="https://www.cnn.com/2020/04/06/health/us-coronavirus-death-count-cdc-explainer/index.html">
                         experts{' '}
-                      </a>{' '}
-                      <a href="https://www.bloomberg.com/opinion/articles/2020-09-21/200-000-coronavirus-deaths-is-an-undercount">
+                      </ELink>{' '}
+                      <ELink href="https://www.bloomberg.com/opinion/articles/2020-09-21/200-000-coronavirus-deaths-is-an-undercount">
                         agree
-                      </a>{' '}
+                      </ELink>{' '}
                       that we are <i>undercounting</i> actual deaths.
                     </p>
                   </div>
