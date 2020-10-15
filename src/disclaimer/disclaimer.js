@@ -29,11 +29,8 @@ export default function Disclaimer(props) {
                   <div className="mt-2">
                     <p className="text-sm leading-5 text-gray pb-2">
                       Data around deaths for COVID-19 varies slightly by source. For this project I chose to utilize
-                      <a className="text-blue-600 underline" href="https://covidtracking.com">
-                        {' '}
-                        covidtracking.com
-                      </a>{' '}
-                      because it seems to be the most accurate and is used by other organizations.
+                      <ELink href="https://covidtracking.com"> covidtracking.com</ELink> because it seems to be the most
+                      accurate and is used by other organizations.
                     </p>
                     <p className="text-sm leading-5 text-gray pb-2">
                       Because of small differences in reporting between sources, some claims about number of deaths will
@@ -42,7 +39,17 @@ export default function Disclaimer(props) {
                     </p>
                     <p className="text-sm leading-5 text-gray pb-2">
                       Unfortanately not every state counts deaths the same way, and covid-19 is still such a new disease
-                      with lots of unknowns so most experts agree that we are <i>undercounting</i> actual deaths.
+                      with lots of unknowns so{' '}
+                      <ELink href="https://www.theguardian.com/world/2020/apr/09/coronavirus-conspiracy-theory-death-overcount-anthony-fauci">
+                        most{' '}
+                      </ELink>{' '}
+                      <a href="https://www.cnn.com/2020/04/06/health/us-coronavirus-death-count-cdc-explainer/index.html">
+                        experts{' '}
+                      </a>{' '}
+                      <a href="https://www.bloomberg.com/opinion/articles/2020-09-21/200-000-coronavirus-deaths-is-an-undercount">
+                        agree
+                      </a>{' '}
+                      that we are <i>undercounting</i> actual deaths.
                     </p>
                   </div>
                 </div>
@@ -64,4 +71,12 @@ export default function Disclaimer(props) {
       </div>
     )
   }
+}
+
+function ELink({ href, children }) {
+  return (
+    <a target="_blank" rel="noopener noreferrer" className="text-blue-600 underline" href={href}>
+      {children}
+    </a>
+  )
 }
