@@ -14,7 +14,7 @@ export default function NavigationBar(props) {
         </div>
         <div className="flex-1 flex items-center sm:justify-end sm:space-x-3 justify-between text-sm text-teal-400 font-medium">
           <Link to="covid-19">Covid-19 US Election</Link>
-          {window.toggles.electoralCollege && <Link to="electoral college">Electoral College</Link>}
+          {window.toggles.electoralCollege && <Link to="electoral-college">Electoral College</Link>}
         </div>
       </div>
     </nav>
