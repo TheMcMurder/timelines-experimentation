@@ -1,16 +1,14 @@
 import React from 'react'
 
 export default function NavIcon(props) {
-  const { height = 50, width = 50, className = '' } = props
+  const { className = '' } = props
   return (
     <svg
-      height={`${height}px`}
-      width={`${width}px`}
       version="1.1"
       x="0px"
       y="0px"
       viewBox="0 0 64 64"
-      className={`fill-current ${className}`}
+      className={`fill-current w-8 h-8 sm:w-12 sm:h-12 ${className}`}
     >
       <title>timeline-steps-roadmap-graph-process-diagram</title>
       <g>
