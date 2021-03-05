@@ -40,22 +40,33 @@ export default function TimeControls() {
     <div className="bg-red-100 md:bg-gray-400 md:absolute p-4 md:w-48 top-0" style={{ left: '12rem' }}>
       <div className="w-100 flex justify-between">
         <button onClick={pause}>
-          <PauseIcon className={playing === false ? classMap.active : classMap.inactive} />
+          <PauseIcon className={getClassName(playing, speed, 'Pause')} />
         </button>
         <button onClick={() => playThenSpeed('Slow')}>
-          <StepForwardSlowIcon className={speed === 'Slow' ? classMap.active : classMap.inactive} />
+          <StepForwardSlowIcon className={getClassName(playing, speed, 'Slow')} />
         </button>
         <button onClick={() => playThenSpeed()}>
-          <PlayIcon
-            className={
-              playing === true ? (speed === 'Normal' ? classMap.active : classMap.partiallyActive) : classMap.inactive
-            }
-          />
+          <PlayIcon className={getClassName(playing, speed, 'Play')} />
         </button>
         <button onClick={() => playThenSpeed('Fast')}>
-          <FastForwardIcon className={speed === 'Fast' ? classMap.active : classMap.inactive} />
+          <FastForwardIcon className={getClassName(playing, speed, 'Fast')} />
         </button>
       </div>
     </div>
   )
+}
+
+function getClassName(playing, speed, icon) {
+  if (icon === 'Fast') {
+    return speed === 'Fast' && playing ? classMap.active : classMap.inactive
+  } else if (icon === 'Slow') {
+    return speed === 'Slow' && playing ? classMap.active : classMap.inactive
+  } else if (icon === 'Pause') {
+    return !playing ? classMap.active : classMap.inactive
+  } else if (icon === 'Play') {
+    if (playing && speed === 'Normal') {
+      return classMap.active
+    }
+    return playing ? classMap.partiallyActive : classMap.inactive
+  }
 }
