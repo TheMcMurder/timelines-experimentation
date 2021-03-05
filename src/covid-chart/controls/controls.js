@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import { start, pause, changeSpeed } from './time-stream.js'
+import React, { useEffect, useState } from 'react'
+import { start, pause, changeSpeed, timeState$ } from './time-stream.js'
+import { FastForwardIcon, StepForwardSlowIcon, PlayIcon, PauseIcon } from './media-icon.js'
 
 const selectionMap = {
   Slow: 2000,
@@ -7,65 +8,56 @@ const selectionMap = {
   Fast: 100,
 }
 
+const classMap = {
+  active: 'text-green-500',
+  partiallyActive: 'text-green-200',
+  inactive: '',
+}
+
+function playThenSpeed(speed = 'Normal') {
+  const selection = selectionMap[speed]
+  changeSpeed(selection)
+  start()
+}
+
 export default function TimeControls() {
+  const [playing, setPlaying] = useState(false)
+  const [speed, setSpeed] = useState('Normal')
+  useEffect(() => {
+    const sub = timeState$.subscribe((state) => {
+      setPlaying(state.playing)
+      if (state.speed === selectionMap.Fast) {
+        setSpeed('Fast')
+      } else if (state.speed === selectionMap.Slow) {
+        setSpeed('Slow')
+      } else {
+        setSpeed('Normal')
+      }
+    })
+    return () => sub.unsubscribe()
+  }, [])
+  console.log('speed', speed)
+  console.log('playing', playing)
   return (
-    <div className="bg-red-100 md:bg-gray-400 md:absolute p-4 md:w-48">
-      <div>Playback</div>
+    <div className="bg-red-100 md:bg-gray-400 md:absolute p-4 md:w-48 top-0" style={{ left: '12rem' }}>
       <div className="w-100 flex justify-between">
-        <Button onClick={start}>Play</Button>
-        <Button onClick={pause} secondary={true}>
-          Pause
-        </Button>
-      </div>
-      <div className="pt-4">
-        <div>Playback speed</div>
-        <RadioButtons
-          initialSelected={'Normal'}
-          options={['Slow', 'Normal', 'Fast']}
-          onChange={(option) => {
-            const selection = selectionMap[option] || selectionMap['Normal']
-            changeSpeed(selection)
-          }}
-        />
+        <button onClick={pause}>
+          <PauseIcon className={playing === false ? classMap.active : classMap.inactive} />
+        </button>
+        <button onClick={() => playThenSpeed('Slow')}>
+          <StepForwardSlowIcon className={speed === 'Slow' ? classMap.active : classMap.inactive} />
+        </button>
+        <button onClick={() => playThenSpeed()}>
+          <PlayIcon
+            className={
+              playing === true ? (speed === 'Normal' ? classMap.active : classMap.partiallyActive) : classMap.inactive
+            }
+          />
+        </button>
+        <button onClick={() => playThenSpeed('Fast')}>
+          <FastForwardIcon className={speed === 'Fast' ? classMap.active : classMap.inactive} />
+        </button>
       </div>
     </div>
-  )
-}
-
-function RadioButtons({ options = [], onChange, initialSelected }) {
-  const [selected, setSelected] = useState(initialSelected)
-  return (
-    <div className="flex justify-between">
-      {options.map((option) => {
-        return (
-          <button
-            key={option}
-            className={`rounded-lg px-2 py-1 text-white leading-tight shadow-md ${
-              selected === option ? 'bg-blue-400' : 'bg-gray-700 hover_bg-gray-900'
-            }`}
-            onClick={() => {
-              setSelected(option)
-              onChange(option)
-            }}
-          >
-            {option}
-          </button>
-        )
-      })}
-    </div>
-  )
-}
-
-function Button(props) {
-  const { children, secondary = false, ...rest } = props
-  return (
-    <button
-      className={`${
-        secondary ? 'bg-gray-700 hover:bg-gray-900' : 'bg-red-700 hover:bg-red-800'
-      } rounded-lg px-4 py-3 text-white font-semibold leading-tight shadow-md`}
-      {...rest}
-    >
-      {children}
-    </button>
   )
 }

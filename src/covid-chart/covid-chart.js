@@ -6,7 +6,6 @@ import BottomTimeAxis from './line-chart/bottom-time-axis/bottom-time-axis.js'
 import LeftValueAxis from './line-chart/left-value-axis/left-value-axis.js'
 import SvgLine from './line-chart/svg-line.js'
 import CasualtyEventLines from './line-chart/causalty-event-lines.js'
-import Controls from './controls/controls.js'
 import NotableEvents from './notable-events/notable-events.js'
 
 export default function CovidChart({ margin, width, height, markAsSeen }) {
@@ -32,7 +31,6 @@ export default function CovidChart({ margin, width, height, markAsSeen }) {
   const dead = dataForCurrentDay?.death || 0
   return (
     <div className="max-w-full max-h-full">
-      <Controls />
       <CovideChartHeader dead={dead} dataForCurrentDay={dataForCurrentDay} markAsSeen={markAsSeen} />
       <div className="max-w-4xl max-h-full" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
         <svg viewBox={[0, 0, width, height]}>
