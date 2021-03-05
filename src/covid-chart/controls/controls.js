@@ -36,8 +36,6 @@ export default function TimeControls() {
     })
     return () => sub.unsubscribe()
   }, [])
-  console.log('speed', speed)
-  console.log('playing', playing)
   return (
     <div className="bg-red-100 md:bg-gray-400 md:absolute p-4 md:w-48 top-0" style={{ left: '12rem' }}>
       <div className="w-100 flex justify-between">
