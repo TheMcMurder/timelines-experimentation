@@ -14,7 +14,6 @@ export default function ILink(props) {
 }
 
 function isActive(baseClasses, classesToAdd, { isPartiallyCurrent }) {
-  console.log('args', arguments)
   return isPartiallyCurrent ? { className: `${baseClasses} ${classesToAdd}` } : { className: `${baseClasses}` }
 }
 
