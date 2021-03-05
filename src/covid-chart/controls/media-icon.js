@@ -3,7 +3,13 @@ import React from 'react'
 function SvgBase(props) {
   const { className, viewBox = '0 0 100 125', children, ...other } = props
   return (
-    <svg version="1.1" x="0px" y="0px" viewBox={viewBox} className={`h-8 w-8 fill-current ${className}`}>
+    <svg
+      version="1.1"
+      x="0px"
+      y="0px"
+      viewBox={viewBox}
+      className={`fill-current w-12 h-12 sm:w-8 sm:h-8 ${className}`}
+    >
       {children}
     </svg>
   )
