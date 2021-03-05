@@ -11,7 +11,7 @@ export default function Root() {
   return (
     <>
       <Navigation />
-      <main className="flex-1 overflow-y-auto">
+      <main className="flex-1 overflow-y-auto container m-auto">
         <Router>
           {window.toggles.homePage ? <Home default path="/" /> : <CovidRoot default path="covid-19" />}
           {window.toggles.homePage && <CovidRoot path="covid-19" />}
