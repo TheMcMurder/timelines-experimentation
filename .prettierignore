@@ -4,3 +4,5 @@ build
 coverage
 .gitignore
 .prettierignore
+.DS_Store
+netlify.toml
