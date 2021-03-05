@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Root from './timelines-root'
+import NewRoot from './new-timelines-root.js'
 
 const domContainer = document.querySelector('#timelines-app')
-ReactDOM.render(<Root />, domContainer)
+ReactDOM.render(<NewRoot />, domContainer)

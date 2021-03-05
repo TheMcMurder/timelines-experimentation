@@ -43,6 +43,7 @@ export default {
       serve({
         contentBase: [`${outputPath}`],
         port: 10023,
+        historyApiFallback: true,
         headers: {
           'Access-Control-Allow-Origin': '*',
         },
