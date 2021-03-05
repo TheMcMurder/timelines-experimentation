@@ -9,10 +9,12 @@ export default function HomePage() {
         Thanks for visiting my experimental site. I like building visualizations for fun, here are some visualizations
         I've made that I wanted to share.
       </p>
-      <FancyLink to="covid-19" title="Covid-19 and 2020 US Presidental race" />
-      <Toggle toggle={'electoralCollege'}>
-        <FancyLink to="electoral-college" title="US Electoral College" />
-      </Toggle>
+      <div className="flex flex-wrap">
+        <FancyLink to="covid-19" title="Covid-19 and 2020 US Presidental race" />
+        <Toggle toggle={'electoralCollege'}>
+          <FancyLink to="electoral-college" title="US Electoral College" />
+        </Toggle>
+      </div>
     </div>
   )
 }
