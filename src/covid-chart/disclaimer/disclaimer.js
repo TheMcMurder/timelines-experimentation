@@ -1,6 +1,5 @@
-import { doc } from 'prettier'
 import React, { useEffect } from 'react'
-import ELink from '../external-link.js'
+import ELink from '../../external-link.js'
 
 export default function Disclaimer({ seen, markAsSeen }) {
   useEffect(() => {

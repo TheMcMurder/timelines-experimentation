@@ -1,36 +1,15 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 import CSS from './timelines-root.css'
-import CovidChart from './covid-chart.js'
-import Accreditation from './accreditation/accreditation.js'
-import Disclaimer from './disclaimer/disclaimer.js'
-import { useSeenDisclaimer } from './persistent/persistent.js'
+import { Router } from '@reach/router'
+import CovidRoot from './covid-chart/covid-chart-wrapper.js'
 
-const height = 300
-const width = 700
+let Other = () => <div>Other</div>
 
-const margin = {
-  top: 20,
-  right: 20,
-  bottom: 40,
-  left: 50,
-}
-
-export default function TimelinesRootComponent() {
-  const [seen, markAsSeen] = useSeenDisclaimer()
+export default function (props) {
   return (
-    <div>
-      <Disclaimer seen={seen} markAsSeen={markAsSeen} />
-      <CovidChart height={height} width={width} margin={margin} markAsSeen={markAsSeen} />
-      <Accreditation />
-    </div>
+    <Router>
+      <CovidRoot default path="covid-19" />
+      <Other path="other" />
+    </Router>
   )
 }
-
-/*
-<LineChart data>
-  <LC.Line/>
-  <LC.xAxis/>
-  <LC.yAxis/>
-<Chart>
-
-*/

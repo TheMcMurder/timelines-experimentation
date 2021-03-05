@@ -1,5 +1,5 @@
 import React from 'react'
-import ExLink from '../external-link.js'
+import ExLink from '../../external-link.js'
 
 export function TrumpEvent({ event }) {
   return <Event person="TRUMP" event={event} />

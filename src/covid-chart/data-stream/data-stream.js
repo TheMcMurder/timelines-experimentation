@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { from, interval, combineLatest } from 'rxjs'
-import { scan, take, map, mergeMap, tap } from 'rxjs/operators'
+import { from, combineLatest } from 'rxjs'
+import { map, tap } from 'rxjs/operators'
 import { getAllEventsSmallerAndNextLarger } from './casualty-event-data.js'
 import { initializeTime } from '../controls/time-stream.js'
 import { timeState$, isRoughlySameDate } from '../controls/time-stream.js'
