@@ -37,7 +37,7 @@ export default function TimeControls() {
     return () => sub.unsubscribe()
   }, [])
   return (
-    <div className="bg-red-100 md:bg-gray-400 md:absolute p-4 md:w-48 top-0" style={{ left: '12rem' }}>
+    <div className="bg-gray-400 md:absolute p-4 w-full md:w-48 top-0" style={{ left: '12rem' }}>
       <div className="w-100 flex justify-between">
         <button onClick={pause}>
           <PauseIcon className={getClassName(playing, speed, 'Pause')} />
