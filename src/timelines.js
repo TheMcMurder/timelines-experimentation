@@ -7,6 +7,10 @@ window.toggles = {
   homePage: getToggleStateFromLS('homePage') || false,
 }
 
+window.customDevTools = {
+  setToggle: (toggleKey, value) => localStorage.setItem(`timelines:${toggleKey}`, value),
+}
+
 const domContainer = document.querySelector('#timelines-app')
 ReactDOM.render(<Root />, domContainer)
 
